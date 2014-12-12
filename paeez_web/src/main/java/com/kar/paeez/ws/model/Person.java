@@ -1,4 +1,4 @@
-package hello;
+package com.kar.paeez.ws.model;
 
 import org.springframework.data.annotation.Id;
 

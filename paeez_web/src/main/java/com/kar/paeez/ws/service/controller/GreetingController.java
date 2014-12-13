@@ -1,4 +1,4 @@
-package com.kar.paeez.ws.service;
+package com.kar.paeez.ws.service.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

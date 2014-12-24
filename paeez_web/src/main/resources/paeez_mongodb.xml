@@ -10,4 +10,7 @@
 		<constructor-arg ref="mongo" />
 		<constructor-arg value="paeez_mgodb" />
 	</bean>
+	<mongo:repositories base-package="com.kar.paeez.ws.repo.mongo" mongo-template-ref="paeez_mongoTemplate"></mongo:repositories>
+	
+	 
 </beans>

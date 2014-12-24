@@ -1,10 +1,6 @@
 package com.kar.paeez.ws.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class Group {
 
@@ -13,14 +9,8 @@ public class Group {
 	private String name ;
 	private String description ;
 	private long createdTime ;
+	private long lastModifiedTime ;
 	private String status ;
-	
-	// @DBRef List<User> users = new ArrayList<>() ;
-	// @DBRef List<User> adminUsers = new ArrayList<>() ;
-
-	@DBRef List<User> users ;
-	@DBRef List<User> adminUsers ;
-
 	
 	public String getId() {
 		return id;
@@ -52,24 +42,17 @@ public class Group {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public List<User> getUsers() {
-		return users;
+	public long getLastModifiedTime() {
+		return lastModifiedTime;
 	}
-	public void setUsers(List<User> users) {
-		this.users = users;
+	public void setLastModifiedTime(long lastModifiedTime) {
+		this.lastModifiedTime = lastModifiedTime;
 	}
-	public List<User> getAdminUsers() {
-		return adminUsers;
-	}
-	public void setAdminUsers(List<User> adminUsers) {
-		this.adminUsers = adminUsers;
-	}
-	
 	@Override
 	public String toString() {
 		return "Group [id=" + id + ", name=" + name + ", description="
-				+ description + ", createdTime=" + createdTime + ", status="
-				+ status + ", users="  + ", adminUsers=" 
-				+ "]";
+				+ description + ", createdTime=" + createdTime
+				+ ", lastModifiedTime=" + lastModifiedTime + ", status="
+				+ status + "]";
 	}
 }

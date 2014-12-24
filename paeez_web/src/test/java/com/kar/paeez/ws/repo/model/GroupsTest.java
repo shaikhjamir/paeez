@@ -1,6 +1,5 @@
 package com.kar.paeez.ws.repo.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Assert;
@@ -20,7 +19,7 @@ public class GroupsTest extends BaseModelTest {
 	private static final int NO_OF_COLUMNS = 4;
 
 	@Autowired
-	private GroupRepository groupRepo;
+	public GroupRepository groupRepo;
 
 	// We need to define this here, since only this class will be autowired, when we do new UsersTest it is not aware of the AutoWiring 
 	@Autowired
@@ -52,8 +51,6 @@ public class GroupsTest extends BaseModelTest {
 			userData.userRepo = userRepo ;
 			userData.seedTestUserData();
 			
-			
-			
 			// First User Test
 			List<Group> groupList = groupRepo.findAll() ; 
 			List<User> userList = userRepo.findAll() ;
@@ -61,32 +58,12 @@ public class GroupsTest extends BaseModelTest {
 			User usr = userList.get(0) ;
 			Assert.assertNotNull(usr);
 			usr.setGroups(groupList);
-			
-			for (Group grp : groupList) {
-				
-				List<User> adminList = grp.getAdminUsers() ;
-				if (adminList == null ) {
-					
-					adminList = new ArrayList<>() ;
-					grp.setAdminUsers(adminList);
-				}
-				List<User> usList = grp.getUsers() ;
-				if (usList == null ) {
-					
-					usList = new ArrayList<>() ;
-					grp.setUsers(usList);
-				}
-
-				grp.getAdminUsers().add(usr);
-				grp.getUsers().add(usr) ;
-				groupRepo.save(grp) ;
-			}
-			
 			userRepo.save(usr) ;
 			
-			System.out.println("Done saving...");
 			User firstUser = userRepo.findByEmailAddress(UsersTest.TEST_EMAIL_ADDRESS);
-			// System.out.println(firstUser);
+			Assert.assertTrue(firstUser.getGroups().size() > 0 );
+			Assert.assertTrue(firstUser.getGroups().get(0) != null );
+			Assert.assertTrue(firstUser.getGroups().get(0).getId() != null && firstUser.getGroups().get(0).getId().length() > 0 );
 			
 		} catch (Exception ex) {
 

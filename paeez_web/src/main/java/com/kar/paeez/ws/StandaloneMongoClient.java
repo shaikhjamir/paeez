@@ -52,9 +52,7 @@ public class StandaloneMongoClient {
 		users.add(usr1) ;
 		users.add(usr2) ;
 		
-		firstGroup.setUsers(users);
-		firstGroup.setAdminUsers(users);
-		
+
 		if (!mo.collectionExists(Group.class)) {
 
 			mo.createCollection(Group.class);

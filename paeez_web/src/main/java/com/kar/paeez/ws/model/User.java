@@ -88,7 +88,7 @@ public class User {
 		return "User [id=" + id + ", name=" + name + ", emailaddress="
 				+ emailAddress + ", status=" + status + ", lastActivity="
 				+ lastActivity + ", lastLoggedIn=" + lastLoggedIn
-				+ ", createdTime=" + createdTime + ", groups="  + "]";
+				+ ", createdTime=" + createdTime + ", groups=" + groups + "]";
 	}
 	
 }

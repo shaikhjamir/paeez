@@ -6,7 +6,7 @@ public class GroupAdminUsers {
 
 	@Id private String id;
 	private String group ;
-	private String user ;
+	private String userEmailAddress ;
 	private long addedOn ;
 	
 	public String getId() {
@@ -21,11 +21,11 @@ public class GroupAdminUsers {
 	public void setGroup(String group) {
 		this.group = group;
 	}
-	public String getUser() {
-		return user;
+	public String getUserEmailAddress() {
+		return userEmailAddress;
 	}
-	public void setUser(String user) {
-		this.user = user;
+	public void setUserEmailAddress(String userEmailAddress) {
+		this.userEmailAddress = userEmailAddress;
 	}
 	
 	public long getAddedOn() {
@@ -36,7 +36,7 @@ public class GroupAdminUsers {
 	}
 	@Override
 	public String toString() {
-		return "GroupAdminUsers [id=" + id + ", group=" + group + ", user="
-				+ user + ", addedOn=" + addedOn + "]";
+		return "GroupAdminUsers [id=" + id + ", group=" + group + ", userEmailAddress="
+				+ userEmailAddress + ", addedOn=" + addedOn + "]";
 	}
 }

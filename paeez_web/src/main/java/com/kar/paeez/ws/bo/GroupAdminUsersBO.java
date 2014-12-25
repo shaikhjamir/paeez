@@ -2,34 +2,51 @@ package com.kar.paeez.ws.bo;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import com.kar.paeez.ws.model.Group;
 import com.kar.paeez.ws.model.GroupAdminUsers;
-import com.kar.paeez.ws.repo.mongo.GroupAdminUsersRepository;
+import com.kar.paeez.ws.model.User;
+import com.kar.paeez.ws.response.WSResponse;
 
+@Component("groupAdminUsersBO")
 public class GroupAdminUsersBO extends BaseBO {
 
-	@Autowired
-	private GroupAdminUsersRepository groupAdminUsersRepo;
-
-	public boolean addAdminUsers(String group, List<String> users) {
+	public boolean addAdminUsers(WSResponse response, String group, List<String> usersEmaiAdderess) {
 		
-		if (users == null || users.size() == 0 ) {
+		if (usersEmaiAdderess == null || usersEmaiAdderess.size() == 0 ) {
 			
 			return false ;
 		}
 		
-		for (String user : users) {
+		for (String userEmail : usersEmaiAdderess) {
 		
-			GroupAdminUsers searchUsers = groupAdminUsersRepo.findByGroupAndUser(group, user) ;
+			User usr = userRepo.findByEmailAddress(userEmail) ;
+			if (usr == null ) {
+				
+				response.error("Skipping: User not found( might not be registered): " + userEmail ) ;
+				continue ;
+			}
+
+			GroupAdminUsers searchUsers = groupAdminUsersRepo.findByGroupAndUserEmailAddress(group, usr.getEmailAddress() ) ;
 			if (searchUsers != null ) {
 				
+				response.info("Skipping: User is already Admin: " + usr.getEmailAddress() ) ;
 				continue ;
+			}
+			
+			Group grp = groupRepo.findOne(group) ;
+			if (grp == null ) {
+				
+				response.error("Group not found: " + group ) ;
+				return false ;
 			}
 			GroupAdminUsers adminUsers = new GroupAdminUsers() ;
 			adminUsers.setGroup(group);
-			adminUsers.setUser(user);
+			adminUsers.setUserEmailAddress(userEmail);
 			groupAdminUsersRepo.save(adminUsers) ;
+			
+			response.info("Success: User added as Admin: " + usr.getEmailAddress() ) ;
 		}
 		
 		return true ;	

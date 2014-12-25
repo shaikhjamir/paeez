@@ -52,7 +52,7 @@ public class GroupAdminUsersTest extends BaseModelTest {
 				
 				GroupAdminUsers adminUsers = new GroupAdminUsers() ;
 				adminUsers.setGroup(grp.getId());
-				adminUsers.setUser(firstUser.getId());
+				adminUsers.setUserEmailAddress(firstUser.getEmailAddress());
 				groupAdminUsersRepo.save(adminUsers) ;
 			}
 			
@@ -61,7 +61,7 @@ public class GroupAdminUsersTest extends BaseModelTest {
 			Assert.assertNotNull(allGrpUsers);
 			for (GroupAdminUsers groupAdminUsers : allGrpUsers) {
 				
-				Assert.assertEquals(firstUser.getId(), groupAdminUsers.getUser());
+				Assert.assertEquals(firstUser.getEmailAddress(), groupAdminUsers.getUserEmailAddress());
 			}
 			
 		} catch (Exception ex) {

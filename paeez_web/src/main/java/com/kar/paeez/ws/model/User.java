@@ -13,8 +13,6 @@ public class User {
 	@Indexed(unique=true) private String emailAddress;
 
 	private String status ;
-	private long lastActivity ;
-	private long lastLoggedIn ;
 	private long createdTime ;
 	
 	@DBRef List<Group> groups ; 
@@ -51,22 +49,6 @@ public class User {
 		this.status = status;
 	}
 
-	public long getLastActivity() {
-		return lastActivity;
-	}
-
-	public void setLastActivity(long lastActivity) {
-		this.lastActivity = lastActivity;
-	}
-
-	public long getLastLoggedIn() {
-		return lastLoggedIn;
-	}
-
-	public void setLastLoggedIn(long lastLoggedIn) {
-		this.lastLoggedIn = lastLoggedIn;
-	}
-
 	public long getCreatedTime() {
 		return createdTime;
 	}
@@ -86,8 +68,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", emailaddress="
-				+ emailAddress + ", status=" + status + ", lastActivity="
-				+ lastActivity + ", lastLoggedIn=" + lastLoggedIn
+				+ emailAddress + ", status=" + status 
 				+ ", createdTime=" + createdTime + ", groups=" + groups + "]";
 	}
 	

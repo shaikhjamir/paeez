@@ -23,16 +23,12 @@ public class StandaloneMongoClient {
 		usr1.setName("Jamir");
 		usr1.setEmailAddress("shaikhjamir@gmail.com");
 		usr1.setCreatedTime(System.currentTimeMillis());
-		usr1.setLastActivity(System.currentTimeMillis());
-		usr1.setLastLoggedIn(System.currentTimeMillis());
 		
 		
 		User usr2 = new User() ;
 		usr2.setName("Jamir");
 		usr2.setEmailAddress("shaikhjamir2@gmail.com");
 		usr2.setCreatedTime(System.currentTimeMillis());
-		usr2.setLastActivity(System.currentTimeMillis());
-		usr2.setLastLoggedIn(System.currentTimeMillis());
 		
 		
 		if (!mo.collectionExists(User.class)) {

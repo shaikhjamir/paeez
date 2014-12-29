@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kar.paeez.ws.bo.GroupAdminUsersBO;
 import com.kar.paeez.ws.model.User;
 import com.kar.paeez.ws.repo.mongo.UserRepository;
+import com.kar.paeez.ws.response.ResponseConstants;
 import com.kar.paeez.ws.response.WSResponse;
 
 @RestController
@@ -29,12 +30,26 @@ public class GroupAdminUsersController {
     public List<String> addAdminUser(@PathVariable("userId") String userId, @PathVariable("grpId") String grpId,
     		@RequestParam(value="emailAddresses", defaultValue="") String emailAddresses) {
 
-		WSResponse response = new WSResponse() ;;
+		WSResponse response = new WSResponse() ;
 		String[] allEmailAddresses = emailAddresses.split(",") ;
 		groupAdminUsersBO.addAdminUsers(response, grpId, Arrays.asList(allEmailAddresses)) ;
 		
 		return response.getMessages() ;
     }
+	
+	@RequestMapping(value="/grpAUsr/get/{userId}")
+	@ResponseBody
+    public Object getMyAdminGroups(@PathVariable("userId") String userId) {
+
+		WSResponse response = new WSResponse() ;
+		groupAdminUsersBO.getMyAdminGroups(response, userId) ;
+		if (response.get(ResponseConstants.ADMIN_GROUPS) == null ) {
+			
+			return response.getMessages() ;
+		}
+		return response.get(ResponseConstants.ADMIN_GROUPS) ;
+    }
+	
 	
 	@RequestMapping(value="/grpAUsr/user", consumes="application/json")
 	@ResponseBody

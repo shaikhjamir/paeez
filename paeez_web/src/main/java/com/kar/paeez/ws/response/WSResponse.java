@@ -31,11 +31,16 @@ public class WSResponse {
 		return messages ;
 	}
 	
-	protected void put(Object key,Object value) {
+	public void put(Object key,Object value) {
 		
 		responseMap.put(key, value) ;
 	}
 	
+	public Object get(Object key) {
+		
+		return responseMap.get(key) ;
+	}
+
 	public Map<Object,Object> getResponse() {
 		
 		return responseMap ;

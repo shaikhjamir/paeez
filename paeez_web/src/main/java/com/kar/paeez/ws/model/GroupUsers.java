@@ -1,13 +1,12 @@
 package com.kar.paeez.ws.model;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class GroupUsers {
 
 	@Id private String id;
-	@DBRef Group group ;
-	@DBRef User user ;
+	private String groupId ;
+	private String userEmailAddress ;
 	private long addedOn ;
 	
 	public String getId() {
@@ -16,17 +15,17 @@ public class GroupUsers {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public Group getGroup() {
-		return group;
+	public String getGroupId() {
+		return groupId;
 	}
-	public void setGroup(Group group) {
-		this.group = group;
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
 	}
-	public User getUser() {
-		return user;
+	public String getUserEmailAddress() {
+		return userEmailAddress;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserEmailAddress(String userEmailAddress) {
+		this.userEmailAddress = userEmailAddress;
 	}
 	
 	public long getAddedOn() {
@@ -35,11 +34,9 @@ public class GroupUsers {
 	public void setAddedOn(long addedOn) {
 		this.addedOn = addedOn;
 	}
-	
 	@Override
 	public String toString() {
-		return "GroupUsers [id=" + id + ", group=" + group + ", user=" + user
-				+ ", addedOn=" + addedOn + "]";
+		return "GroupUsers [id=" + id + ", groupId=" + groupId + ", userEmailAddress="
+				+ userEmailAddress + ", addedOn=" + addedOn + "]";
 	}
-	
 }

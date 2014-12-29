@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 public class GroupAdminUsers {
 
 	@Id private String id;
-	private String group ;
+	private String groupId ;
 	private String userEmailAddress ;
 	private long addedOn ;
 	
@@ -15,11 +15,11 @@ public class GroupAdminUsers {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getGroup() {
-		return group;
+	public String getGroupId() {
+		return groupId;
 	}
-	public void setGroup(String group) {
-		this.group = group;
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
 	}
 	public String getUserEmailAddress() {
 		return userEmailAddress;
@@ -36,7 +36,7 @@ public class GroupAdminUsers {
 	}
 	@Override
 	public String toString() {
-		return "GroupAdminUsers [id=" + id + ", group=" + group + ", userEmailAddress="
+		return "GroupAdminUsers [id=" + id + ", groupId=" + groupId + ", userEmailAddress="
 				+ userEmailAddress + ", addedOn=" + addedOn + "]";
 	}
 }

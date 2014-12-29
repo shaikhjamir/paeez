@@ -8,5 +8,4 @@ import com.kar.paeez.ws.model.Group;
 
 @RepositoryRestResource(collectionResourceRel = "groups", path = "groups")
 public interface GroupRepository extends MongoRepository<Group, String> {
-
 }

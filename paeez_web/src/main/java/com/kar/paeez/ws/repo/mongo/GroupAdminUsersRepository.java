@@ -14,5 +14,7 @@ public interface GroupAdminUsersRepository extends MongoRepository<GroupAdminUse
 
 	GroupAdminUsers findByGroupAndUserEmailAddress(@Param("group") String group, @Param("userEmailAddress") String userEmailAddress) ;
 	
+	List<GroupAdminUsers> findByGroup(@Param("groupId") String groupId) ;
+	
 	List<GroupAdminUsers> findByUserEmailAddress(@Param("userEmailAddress") String userEmailAddress) ;
 }

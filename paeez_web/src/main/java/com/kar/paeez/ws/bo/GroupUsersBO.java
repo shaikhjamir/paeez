@@ -5,15 +5,15 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.kar.paeez.ws.model.Group;
-import com.kar.paeez.ws.model.GroupAdminUsers;
+import com.kar.paeez.ws.model.GroupUsers;
 import com.kar.paeez.ws.model.User;
 import com.kar.paeez.ws.response.ResponseConstants;
 import com.kar.paeez.ws.response.WSResponse;
 
-@Component("groupAdminUsersBO")
-public class GroupAdminUsersBO extends BaseBO {
+@Component("GroupUsersBO")
+public class GroupUsersBO extends BaseBO {
 
-	public boolean addAdminUsers(WSResponse response, String groupId, List<String> emailAddressList) {
+	public boolean addUsers(WSResponse response, String groupId, List<String> emailAddressList) {
 		
 		if (emailAddressList == null || emailAddressList.size() == 0 ) {
 			
@@ -29,7 +29,7 @@ public class GroupAdminUsersBO extends BaseBO {
 				continue ;
 			}
 
-			GroupAdminUsers searchUsers = groupAdminUsersRepo.findByGroupAndUserEmailAddress(groupId, usr.getEmailAddress() ) ;
+			GroupUsers searchUsers = groupUsersRepo.findByGroupAndUserEmailAddress(groupId, usr.getEmailAddress() ) ;
 			if (searchUsers != null ) {
 				
 				response.info("Skipping: User is already Admin: " + usr.getEmailAddress() ) ;
@@ -42,11 +42,11 @@ public class GroupAdminUsersBO extends BaseBO {
 				response.error("Group not found: " + groupId ) ;
 				return false ;
 			}
-			GroupAdminUsers adminUsers = new GroupAdminUsers() ;
+			GroupUsers adminUsers = new GroupUsers() ;
 			adminUsers.setGroupId(groupId);
 			adminUsers.setUserEmailAddress(userEmail);
 			adminUsers.setAddedOn(System.currentTimeMillis());
-			groupAdminUsersRepo.save(adminUsers) ;
+			groupUsersRepo.save(adminUsers) ;
 			
 			response.info("Success: User added as Admin: " + usr.getEmailAddress() ) ;
 		}
@@ -60,7 +60,7 @@ public class GroupAdminUsersBO extends BaseBO {
 	 * @param userId
 	 * @return
 	 */
-	public boolean getMyAdminGroups(WSResponse response, String userId) {
+	public boolean getMyGroups(WSResponse response, String userId) {
 		
 		if (userId == null) {
 			
@@ -74,13 +74,13 @@ public class GroupAdminUsersBO extends BaseBO {
 			return false ;
 		}
 		
-		List<GroupAdminUsers> searchGroups = groupAdminUsersRepo.findByUserEmailAddress(usr.getEmailAddress() ) ;
+		List<GroupUsers> searchGroups = groupUsersRepo.findByUserEmailAddress(usr.getEmailAddress() ) ;
 		response.put(ResponseConstants.ADMIN_GROUPS, searchGroups);
 		return true ;	
 	}
 	
 	
-	public boolean removeAdminUsers(WSResponse response, String groupId, List<String> emailAddressList, String userId) {
+	public boolean removeUsers(WSResponse response, String groupId, List<String> emailAddressList, String userId) {
 		
 		if (emailAddressList == null || emailAddressList.size() == 0 ) {
 			
@@ -101,10 +101,10 @@ public class GroupAdminUsersBO extends BaseBO {
 				response.info("Skipping: Cannot removed self as Admin: " + usr.getEmailAddress() ) ;
 				continue ;
 			}
-			GroupAdminUsers searchUsers = groupAdminUsersRepo.findByGroupAndUserEmailAddress(groupId, usr.getEmailAddress() ) ;
+			GroupUsers searchUsers = groupUsersRepo.findByGroupAndUserEmailAddress(groupId, usr.getEmailAddress() ) ;
 			if (searchUsers != null ) {
 				
-				groupAdminUsersRepo.delete(searchUsers);
+				groupUsersRepo.delete(searchUsers);
 				response.info("Success: User removed as Admin: " + usr.getEmailAddress() ) ;
 				continue ;
 			}

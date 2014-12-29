@@ -51,7 +51,7 @@ public class GroupAdminUsersTest extends BaseModelTest {
 			for (Group grp : firstUser.getGroups()) {
 				
 				GroupAdminUsers adminUsers = new GroupAdminUsers() ;
-				adminUsers.setGroup(grp.getId());
+				adminUsers.setGroupId(grp.getId());
 				adminUsers.setUserEmailAddress(firstUser.getEmailAddress());
 				groupAdminUsersRepo.save(adminUsers) ;
 			}

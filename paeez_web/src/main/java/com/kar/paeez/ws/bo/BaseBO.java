@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.kar.paeez.ws.repo.mongo.GroupAdminUsersRepository;
 import com.kar.paeez.ws.repo.mongo.GroupRepository;
+import com.kar.paeez.ws.repo.mongo.GroupUsersRepository;
 import com.kar.paeez.ws.repo.mongo.UserRepository;
 
 
@@ -12,6 +13,9 @@ abstract public class BaseBO {
 	@Autowired
 	protected GroupAdminUsersRepository groupAdminUsersRepo;
 
+	@Autowired
+	protected GroupUsersRepository groupUsersRepo;
+	
 	@Autowired
 	protected UserRepository userRepo;
 

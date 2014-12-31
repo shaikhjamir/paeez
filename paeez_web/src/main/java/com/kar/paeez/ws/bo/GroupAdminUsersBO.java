@@ -29,7 +29,7 @@ public class GroupAdminUsersBO extends BaseBO {
 				continue ;
 			}
 
-			GroupAdminUsers searchUsers = groupAdminUsersRepo.findByGroupAndUserEmailAddress(groupId, usr.getEmailAddress() ) ;
+			GroupAdminUsers searchUsers = groupAdminUsersRepo.findByGroupIdAndUserEmailAddress(groupId, usr.getEmailAddress() ) ;
 			if (searchUsers != null ) {
 				
 				response.info("Skipping: User is already Admin: " + usr.getEmailAddress() ) ;
@@ -101,7 +101,7 @@ public class GroupAdminUsersBO extends BaseBO {
 				response.info("Skipping: Cannot removed self as Admin: " + usr.getEmailAddress() ) ;
 				continue ;
 			}
-			GroupAdminUsers searchUsers = groupAdminUsersRepo.findByGroupAndUserEmailAddress(groupId, usr.getEmailAddress() ) ;
+			GroupAdminUsers searchUsers = groupAdminUsersRepo.findByGroupIdAndUserEmailAddress(groupId, usr.getEmailAddress() ) ;
 			if (searchUsers != null ) {
 				
 				groupAdminUsersRepo.delete(searchUsers);

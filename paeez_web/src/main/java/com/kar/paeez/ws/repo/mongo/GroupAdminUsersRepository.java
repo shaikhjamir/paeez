@@ -12,9 +12,9 @@ import com.kar.paeez.ws.model.GroupAdminUsers;
 @RepositoryRestResource(collectionResourceRel = "groupsadminusers", path = "groupsadminusers")
 public interface GroupAdminUsersRepository extends MongoRepository<GroupAdminUsers, String> {
 
-	GroupAdminUsers findByGroupAndUserEmailAddress(@Param("group") String group, @Param("userEmailAddress") String userEmailAddress) ;
+	GroupAdminUsers findByGroupIdAndUserEmailAddress(@Param("groupId") String groupId, @Param("userEmailAddress") String userEmailAddress) ;
 	
-	List<GroupAdminUsers> findByGroup(@Param("groupId") String groupId) ;
+	List<GroupAdminUsers> findByGroupId(@Param("groupId") String groupId) ;
 	
 	List<GroupAdminUsers> findByUserEmailAddress(@Param("userEmailAddress") String userEmailAddress) ;
 }

@@ -1,7 +1,7 @@
 package com.paeez.test.core.repositories;
 
 import com.paeez.Application;
-import com.paeez.core.model.GlobalBet;
+import com.paeez.core.model.GenericBet;
 import com.paeez.core.model.GroupAdminUsers;
 import com.paeez.core.model.GroupUsers;
 import com.paeez.core.model.User;
@@ -15,16 +15,13 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import org.supercsv.cellprocessor.Optional;
-import org.supercsv.cellprocessor.ParseLong;
-import org.supercsv.cellprocessor.ift.CellProcessor;
 
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
-public class GlobalBetTest  { //extends BaseModelTest {
+public class GenericBetTest { //extends BaseModelTest {
 
 	private static final int NO_OF_COLUMNS = 4;
 
@@ -68,9 +65,9 @@ public class GlobalBetTest  { //extends BaseModelTest {
 	public void seedGlobalBetData() {
 
 		try {
-			List<GlobalBet> globalBetList = globalBetRepo.findAll() ;
+			List<GenericBet> genericBetList = globalBetRepo.findAll() ;
 			
-			GlobalBet bet = globalBetList.get(0) ;
+			GenericBet bet = genericBetList.get(0) ;
 			Assert.assertNotNull(bet);
 			Assert.assertTrue(bet.getOptions().length > 0 );
 			Assert.assertTrue(bet.getDescription() != null );

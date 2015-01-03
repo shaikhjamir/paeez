@@ -3,6 +3,8 @@ package com.paeez.core.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
+import java.util.Date;
+
 /**
  * This is the GlobalBet which will be imported
  * @author shaikhjamir
@@ -12,12 +14,10 @@ public class GroupBetImport {
 
 	@Id
 	private String id;
-	
 	private String groupId ; // GroupId for which the bet was imported
-	@DBRef
-	GlobalBet globalBet ; // Reference Global Bet
+	private String betsCartId;
 	private String importedByUserEmailAddress; // AdminUser who imported 
-	private long importedOn ; // date when imported
+	private Date importedOn ; // date when imported
 	
 	public String getId() {
 		return id;
@@ -31,30 +31,37 @@ public class GroupBetImport {
 	public void setGroupId(String groupId) {
 		this.groupId = groupId;
 	}
-	public GlobalBet getGlobalBet() {
-		return globalBet;
-	}
-	public void setGlobalBet(GlobalBet globalBet) {
-		this.globalBet = globalBet;
-	}
-	public String getImportedByUserEmailAddres() {
-		return importedByUserEmailAddress;
-	}
-	public void setImportedByUserEmailAddres(String importedByUserId) {
-		this.importedByUserEmailAddress = importedByUserId;
-	}
-	public long getImportedOn() {
+	public Date getImportedOn() {
 		return importedOn;
 	}
-	public void setImportedOn(long importedOn) {
+	public void setImportedOn(Date importedOn) {
 		this.importedOn = importedOn;
 	}
-	
+
+	public String getBetsCartId() {
+		return betsCartId;
+	}
+
+	public void setBetsCartId(String betsCartId) {
+		this.betsCartId = betsCartId;
+	}
+
+	public String getImportedByUserEmailAddress() {
+		return importedByUserEmailAddress;
+	}
+
+	public void setImportedByUserEmailAddress(String importedByUserEmailAddress) {
+		this.importedByUserEmailAddress = importedByUserEmailAddress;
+	}
+
 	@Override
 	public String toString() {
-		return "GroupBetImport [id=" + id + ", groupId=" + groupId
-				+ ", globalBet=" + globalBet + ", importedByUserId="
-				+ importedByUserEmailAddress + ", importedOn=" + importedOn + "]";
+		return "GroupBetImport{" +
+				"id='" + id + '\'' +
+				", groupId='" + groupId + '\'' +
+				", betsCartId='" + betsCartId + '\'' +
+				", importedByUserEmailAddress='" + importedByUserEmailAddress + '\'' +
+				", importedOn=" + importedOn +
+				'}';
 	}
-	
 }

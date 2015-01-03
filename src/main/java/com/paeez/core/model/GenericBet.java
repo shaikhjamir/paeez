@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @author shaikhjamir
  *
  */
-public class GlobalBet {
+public class GenericBet {
 
 	@Id
 	private String id;

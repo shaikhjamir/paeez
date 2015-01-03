@@ -58,10 +58,6 @@ public class BetsCartController {
             if (matchBetInstance != null) {
                 updatedBetsCart = betsCartServices.addBetToCart(betCartId, matchBetInstance);
 
-//                addedResource = new MatchBetResourceAsm().toResource(matchBetInstance);
-//                addedResource.add(linkTo(MatchBetController.class).slash(matchBetInstance.getId()).slash("betinfo")
-//                        .withRel("matchbet"));
-
                 updatedBetsCartResource = new BetsCartResourceAsm().toResource(updatedBetsCart);
                 updatedBetsCartResource.add(linkTo(MatchBetController.class).slash(matchBetInstance.getId()).slash("betinfo").withRel("matchbet"));
             }

@@ -11,29 +11,17 @@ public class BetsCart {
 
     @Id
     private String id;
-    //private String betType;
     private List<Bet> bets;
 
     public String getId() {
         return id;
     }
-
     public void setId(String id) {
         this.id = id;
     }
-
-//    public String getBetType() {
-//        return betType;
-//    }
-//
-//    public void setType(String betType) {
-//        this.betType = betType;
-//    }
-
     public List<Bet> getBets() {
         return bets;
     }
-
     public void setBets(List<Bet> bets) {
         this.bets = bets;
     }

@@ -1,18 +1,12 @@
 package com.paeez.test.core.repositories;
 
-import com.paeez.Application;
-import com.paeez.core.model.GlobalBet;
+import com.paeez.core.model.GenericBet;
 import com.paeez.core.model.Group;
 import com.paeez.core.model.User;
 import org.junit.Assert;
-import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.data.mongodb.core.MongoOperations;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.supercsv.cellprocessor.Optional;
 import org.supercsv.cellprocessor.ParseLong;
 import org.supercsv.cellprocessor.ift.CellProcessor;
@@ -83,7 +77,7 @@ public class SetupUtil {
         } ;
         path = this.getClass().getResource(GLOBALBET_CSV_PATH).getPath();
         Assert.assertNotNull("Input GlobalBet.csv test file missing", path);
-        insertFromCSV(path, GlobalBet.class, NO_OF_COLUMNS_GLOBALBETS, processors);
+        insertFromCSV(path, GenericBet.class, NO_OF_COLUMNS_GLOBALBETS, processors);
     }
     @SuppressWarnings({ "rawtypes", "unchecked", "resource" })
     protected void insertAll(Class clazz, List<? extends Object> objectsToSave) {

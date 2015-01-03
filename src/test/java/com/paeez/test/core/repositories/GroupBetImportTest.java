@@ -1,10 +1,9 @@
 package com.paeez.test.core.repositories;
 
 import com.paeez.Application;
-import com.paeez.core.services.impl.GroupBetImportService;
-import com.paeez.core.model.GlobalBet;
+import com.paeez.core.services.impl.GroupBetImportServiceImpl;
+import com.paeez.core.model.GenericBet;
 import com.paeez.core.model.Group;
-import com.paeez.core.model.GroupBetImport;
 import com.paeez.core.model.User;
 import com.paeez.core.repositories.mongo.GlobalBetRepository;
 import com.paeez.core.repositories.mongo.GroupBetImportRepository;
@@ -35,7 +34,7 @@ public class GroupBetImportTest { //} extends BaseModelTest {
 	public GroupBetImportRepository groupBetImportRepo;
 	
 	@Autowired
-	protected GroupBetImportService groupBetImportBO ;
+	protected GroupBetImportServiceImpl groupBetImportBO ;
 	
 	@Autowired
 	public UserRepository userRepo;
@@ -55,7 +54,7 @@ public class GroupBetImportTest { //} extends BaseModelTest {
 
 		try {
 			dropTable();
-			GlobalBetTest betTest = new GlobalBetTest() ;
+			GenericBetTest betTest = new GenericBetTest() ;
 			betTest.globalBetRepo = globalBetRepo ;
 			betTest.seedGlobalBetData();
 		} catch (Exception ex) {
@@ -76,9 +75,9 @@ public class GroupBetImportTest { //} extends BaseModelTest {
 			
 			User usr = userRepo.findAll().get(0) ;
 			Group grp = groupRepo.findAll().get(0) ;
-			GlobalBet globalBet = globalBetRepo.findAll().get(0) ;
+			GenericBet genericBet = globalBetRepo.findAll().get(0) ;
 			
-			groupBetImportBO.importBet(response, usr.getId(), grp.getId(), globalBet.getId() ) ;
+			groupBetImportBO.importBet(response, usr.getId(), grp.getId(), genericBet.getId() ) ;
 			List<String> messages = response.getMessages() ;
 			
 			Assert.assertNotNull(messages);

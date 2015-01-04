@@ -3,9 +3,9 @@ package com.paeez.core.services.impl;
 
 import com.paeez.core.model.MatchBet;
 import com.paeez.core.repositories.mongo.MatchBetRepository;
-import com.paeez.core.services.api.MatchBetServices;
-import com.paeez.core.services.contants.BetStatus;
-import com.paeez.core.services.contants.BetWinner;
+import com.paeez.core.services.api.MatchBetService;
+import com.paeez.core.services.constants.BetStatus;
+import com.paeez.core.services.constants.BetWinner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -20,7 +20,7 @@ import java.util.List;
  */
 
 @Service
-public class MatchBetServiceImpl implements MatchBetServices {
+public class MatchBetServiceImpl implements MatchBetService {
 
     private MatchBetRepository matchBetRepository;
 
@@ -50,6 +50,11 @@ public class MatchBetServiceImpl implements MatchBetServices {
         return mongoOperations.find(query, MatchBet.class);
     }
 
+    public List<MatchBet> findClosed() {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("status").is(BetStatus.CLOSED));
+        return mongoOperations.find(query, MatchBet.class);
+    }
     @Override
     public void updateStatus(String id, BetStatus betStatus) {
         MatchBet matchBet = matchBetRepository.findOne(id);

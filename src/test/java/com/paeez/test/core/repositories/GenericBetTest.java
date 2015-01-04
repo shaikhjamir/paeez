@@ -6,6 +6,7 @@ import com.paeez.core.model.GroupAdminUsers;
 import com.paeez.core.model.GroupUsers;
 import com.paeez.core.model.User;
 import com.paeez.core.repositories.mongo.GlobalBetRepository;
+import com.paeez.test.utilities.SetupUtil;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

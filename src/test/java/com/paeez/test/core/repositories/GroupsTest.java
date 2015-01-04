@@ -6,6 +6,7 @@ import com.paeez.core.model.GroupUsers;
 import com.paeez.core.model.User;
 import com.paeez.core.repositories.mongo.GroupRepository;
 import com.paeez.core.repositories.mongo.UserRepository;
+import com.paeez.test.utilities.SetupUtil;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,9 +16,6 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import org.supercsv.cellprocessor.Optional;
-import org.supercsv.cellprocessor.ParseLong;
-import org.supercsv.cellprocessor.ift.CellProcessor;
 
 import java.util.List;
 

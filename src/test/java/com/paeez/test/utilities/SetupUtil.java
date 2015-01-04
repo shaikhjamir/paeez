@@ -1,8 +1,9 @@
-package com.paeez.test.core.repositories;
+package com.paeez.test.utilities;
 
 import com.paeez.core.model.GenericBet;
 import com.paeez.core.model.Group;
 import com.paeez.core.model.User;
+import com.paeez.test.base.Base;
 import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +28,7 @@ import java.util.List;
 //@RunWith(SpringJUnit4ClassRunner.class)
 //@SpringApplicationConfiguration(classes = Application.class)
 //@WebAppConfiguration
-public class SetupUtil {
+public class SetupUtil extends Base {
 
     private static final int NO_OF_COLUMNS_USERS = 3;
     private static final int NO_OF_COLUMNS_GROUPS = 3;
@@ -37,7 +38,7 @@ public class SetupUtil {
     final static String GROUPS_CSV_PATH ="/testdata/Groups.csv";
     final static String GLOBALBET_CSV_PATH = "/testdata/GlobalBet.csv";
 
-    private MongoOperations mongoOperations;
+    //private MongoOperations mongoOperations;
 
     public SetupUtil() {
 
@@ -51,7 +52,7 @@ public class SetupUtil {
             return true;
         return false;
     }
-    protected void setupRepo() {
+    public void setupRepo() {
         //User seed
         String path = null;
         path = this.getClass().getResource(USERS_CSV_PATH).getPath();
@@ -80,7 +81,7 @@ public class SetupUtil {
         insertFromCSV(path, GenericBet.class, NO_OF_COLUMNS_GLOBALBETS, processors);
     }
     @SuppressWarnings({ "rawtypes", "unchecked", "resource" })
-    protected void insertAll(Class clazz, List<? extends Object> objectsToSave) {
+    public void insertAll(Class clazz, List<? extends Object> objectsToSave) {
         if (!mongoOperations.collectionExists(clazz)) {
 
             mongoOperations.createCollection(clazz);
@@ -89,7 +90,7 @@ public class SetupUtil {
     }
 
     @SuppressWarnings({ "rawtypes", "unchecked", "resource" })
-    protected void insertFromCSV(String path, Class clazz, int noOfColumns, CellProcessor[] processors) {
+    public void insertFromCSV(String path, Class clazz, int noOfColumns, CellProcessor[] processors) {
 
         if (processors == null ) {
             processors = new CellProcessor[noOfColumns] ;
@@ -100,7 +101,6 @@ public class SetupUtil {
         }
 
         File csvFileName = new File(path) ;
-
         Reader fileReader;
         try {
             fileReader = new FileReader(csvFileName);

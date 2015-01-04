@@ -9,17 +9,17 @@ import com.paeez.core.model.BetsCart;
 import com.paeez.core.model.MatchBet;
 import com.paeez.core.repositories.mongo.BetsCartRepository;
 import com.paeez.core.repositories.mongo.MatchBetRepository;
-import com.paeez.core.services.contants.BetStatus;
-import com.paeez.core.services.contants.BetTypes;
-import com.paeez.core.services.contants.BetWinner;
+import com.paeez.core.services.constants.BetStatus;
+import com.paeez.core.services.constants.BetTypes;
+import com.paeez.core.services.constants.BetWinner;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -30,6 +30,7 @@ import java.util.List;
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
+@EnableScheduling
 public class Application implements CommandLineRunner {
     @Autowired
     private MatchBetRepository repository;

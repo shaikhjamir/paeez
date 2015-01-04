@@ -4,9 +4,9 @@ package com.paeez.rest.controllers;
 import com.paeez.core.model.MatchBet;
 import com.paeez.rest.resources.MatchBetResource;
 import com.paeez.rest.resources.asm.MatchBetResourceAsm;
-import com.paeez.core.services.api.MatchBetServices;
-import com.paeez.core.services.contants.BetStatus;
-import com.paeez.core.services.contants.BetWinner;
+import com.paeez.core.services.api.MatchBetService;
+import com.paeez.core.services.constants.BetStatus;
+import com.paeez.core.services.constants.BetWinner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -25,10 +25,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/matchbets")
 public class MatchBetController {
-    private MatchBetServices betService;
+    private MatchBetService betService;
 
     @Autowired
-    public MatchBetController(MatchBetServices betService) {
+    public MatchBetController(MatchBetService betService) {
         this.betService = betService;
     }
 

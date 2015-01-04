@@ -14,12 +14,12 @@ import java.util.List;
  * Created by Shrikant on 1/1/15.
  */
 @Service
-public class BetsCartServicesImpl implements BetsCartServices {
+public class BetsCartServiceImpl implements BetsCartServices {
 
     private BetsCartRepository betsCartRepository;
 
     @Autowired
-    public BetsCartServicesImpl(BetsCartRepository betsCartRepository) {
+    public BetsCartServiceImpl(BetsCartRepository betsCartRepository) {
         this.betsCartRepository = betsCartRepository;
     }
 

@@ -1,4 +1,4 @@
-package com.paeez.core.services.contants;
+package com.paeez.core.services.constants;
 
 /**
  * Created by Shrikant on 1/1/15.

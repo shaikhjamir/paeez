@@ -6,7 +6,7 @@ import com.paeez.rest.resources.BetIdResource;
 import com.paeez.rest.resources.BetsCartResource;
 import com.paeez.rest.resources.asm.BetsCartResourceAsm;
 import com.paeez.core.services.api.BetsCartServices;
-import com.paeez.core.services.api.MatchBetServices;
+import com.paeez.core.services.api.MatchBetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -28,10 +28,10 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 public class BetsCartController {
 
     private BetsCartServices betsCartServices;
-    private MatchBetServices matchBetService;
+    private MatchBetService matchBetService;
 
     @Autowired
-    public BetsCartController(BetsCartServices betsCartServices, MatchBetServices matchBetService) {
+    public BetsCartController(BetsCartServices betsCartServices, MatchBetService matchBetService) {
         this.betsCartServices = betsCartServices;
         this.matchBetService = matchBetService;
     }

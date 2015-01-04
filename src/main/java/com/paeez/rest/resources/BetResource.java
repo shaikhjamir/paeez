@@ -1,7 +1,7 @@
 package com.paeez.rest.resources;
 
 import com.paeez.core.model.MatchBet;
-import com.paeez.core.services.contants.BetTypes;
+import com.paeez.core.services.constants.BetTypes;
 import org.springframework.hateoas.ResourceSupport;
 
 import java.text.SimpleDateFormat;

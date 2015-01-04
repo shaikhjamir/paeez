@@ -1,8 +1,8 @@
 package com.paeez.core.model;
 
-import com.paeez.core.services.contants.BetStatus;
-import com.paeez.core.services.contants.BetTypes;
-import com.paeez.core.services.contants.BetWinner;
+import com.paeez.core.services.constants.BetStatus;
+import com.paeez.core.services.constants.BetTypes;
+import com.paeez.core.services.constants.BetWinner;
 import org.springframework.data.annotation.Id;
 
 import java.util.Date;

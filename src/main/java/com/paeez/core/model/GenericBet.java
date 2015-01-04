@@ -1,29 +1,37 @@
 package com.paeez.core.model;
 
+import com.paeez.core.services.constants.BetStatus;
+import com.paeez.core.services.constants.BetTypes;
 import org.springframework.data.annotation.Id;
 
 import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This is the GlobalBet which will be imported
  * @author shaikhjamir
  *
  */
-public class GenericBet {
+public class GenericBet implements Bet{
 
 	@Id
 	private String id;
 	
 	private String description ; // can be question like who will score max runs
-	private long createdTime ;   // creation of this Bet this is not at realted to the actual Bet
-	private long lastModifiedTime ; //  
-	private String status ; // can be active, closed
+	private Date createdTime ;   // creation of this Bet this is not at realted to the actual Bet
+	private Date lastModifiedTime ; //
+	private BetStatus status ; // can be active, closed
 	private String createdBy ; // user who created this
-	private long closingTime ; // This is the time till which Bets are to be accepted, after this elapses Bets should not be accepted
+	private Date closingTime ; // This is the time till which Bets are to be accepted, after this elapses Bets should not be accepted
 	   						   // also the closingTime is used while displaying to the user, all Bets will be sorted based on closingTime
 	private long resultTime ; // Ideal time when the results will be declared
-	private String[] options ; // options displayed such as Virat, Marsh etc. This should never be null rather should have at least 2 options
-	
+	private List<String> options ; // options displayed such as Virat, Marsh etc. This should never be null rather should have at least 2 options
+    private String winningOption;
+	private BetTypes betType;
+	private Map<String, Long> betMeasureByOptions;
+
 	public String getId() {
 		return id;
 	}
@@ -36,59 +44,98 @@ public class GenericBet {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public long getCreatedTime() {
-		return createdTime;
-	}
-	public void setCreatedTime(long createdTime) {
-		this.createdTime = createdTime;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	public long getLastModifiedTime() {
-		return lastModifiedTime;
-	}
-	public void setLastModifiedTime(long lastModifiedTime) {
-		this.lastModifiedTime = lastModifiedTime;
-	}
+
 	public String getCreatedBy() {
 		return createdBy;
 	}
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
-	public String[] getOptions() {
-		return options;
+
+	public Date getLastModifiedTime() {
+		return lastModifiedTime;
 	}
-	public void setOptions(String[] options) {
-		this.options = options;
+
+	public void setLastModifiedTime(Date lastModifiedTime) {
+		this.lastModifiedTime = lastModifiedTime;
 	}
-	public void setOptions(String options) {
-		// default separator ":"
-		this.options = options.split(":");
+
+	public BetStatus getStatus() {
+		return status;
 	}
-	public long getClosingTime() {
+
+	public void setStatus(BetStatus status) {
+		this.status = status;
+	}
+
+	public Date getClosingTime() {
 		return closingTime;
 	}
-	public void setClosingTime(long closingTime) {
+
+	public void setClosingTime(Date closingTime) {
 		this.closingTime = closingTime;
 	}
+
 	public long getResultTime() {
 		return resultTime;
 	}
 	public void setResultTime(long resultTime) {
 		this.resultTime = resultTime;
 	}
-	
+
+	public List<String> getOptions() {
+		return options;
+	}
+
+	public void setOptions(List<String> options) {
+		this.options = options;
+	}
+
+	public Date getCreatedTime() {
+		return createdTime;
+	}
+
+	public void setCreatedTime(Date createdTime) {
+		this.createdTime = createdTime;
+	}
+
+	@Override
+	public BetTypes getBetType() {
+		return betType;
+	}
+
+	public void setBetType(BetTypes betType) {
+		this.betType = betType;
+	}
+
+	public String getWinningOption() {
+		return winningOption;
+	}
+
+	public void setWinningOption(String winningOption) {
+		this.winningOption = winningOption;
+	}
+
+	public Map<String, Long> getBetMeasureByOptions() {
+		return betMeasureByOptions;
+	}
+
+	public void setBetMeasureByOptions(Map<String, Long> betMeasureByOptions) {
+		this.betMeasureByOptions = betMeasureByOptions;
+	}
+
 	@Override
 	public String toString() {
-		return "GlobalBet [id=" + id + ", description=" + description
-				+ ", createdTime=" + createdTime + ", lastModifiedTime="
-				+ lastModifiedTime + ", status=" + status + ", createdBy="
-				+ createdBy + ", closingTime=" + closingTime + ", resultTime="
-				+ resultTime + ", options=" + Arrays.toString(options) + "]";
+		return "GenericBet{" +
+				"id='" + id + '\'' +
+				", description='" + description + '\'' +
+				", createdTime=" + createdTime +
+				", lastModifiedTime=" + lastModifiedTime +
+				", status='" + status + '\'' +
+				", createdBy='" + createdBy + '\'' +
+				", closingTime=" + closingTime +
+				", resultTime=" + resultTime +
+				", options=" + options +
+				'}';
 	}
 }

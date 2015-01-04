@@ -1,9 +1,9 @@
 package com.paeez.rest.resources;
 
 import com.paeez.core.model.MatchBet;
-import com.paeez.core.services.contants.BetStatus;
-import com.paeez.core.services.contants.BetTypes;
-import com.paeez.core.services.contants.BetWinner;
+import com.paeez.core.services.constants.BetStatus;
+import com.paeez.core.services.constants.BetTypes;
+import com.paeez.core.services.constants.BetWinner;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

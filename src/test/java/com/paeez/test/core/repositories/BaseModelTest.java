@@ -28,7 +28,6 @@
 //@RunWith(SpringJUnit4ClassRunner.class)
 //@SpringApplicationConfiguration(classes = Application.class)
 //@WebAppConfiguration
-////@ContextConfiguration(locations = { "classpath:paeez_mongodb.xml" })
 //public class BaseModelTest {
 //	private static final int NO_OF_COLUMNS = 3;
 //	private static Logger logger = LoggerFactory.getLogger(BaseModelTest.class) ;

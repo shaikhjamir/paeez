@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00f16653-7b18-47b1-bdd0-93ba0906871a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/UserPlayedBetsRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/UserPlayedBetsResourceAsm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/UserPlayedBetsService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/UserPlayedBetsServiceImpl.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/UserGenericBets.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/UserMatchBetsRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/UserMatchBetsService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/UserMatchBetsServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/UserMatchBetsResourceAsm.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/UserMatchBets.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/UserPlayedBets.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/scheduledtasks/UserMatchBetsResultUpdateSceduledTask.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTask.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/UserMatchBetsController.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/UserPlayedBetsController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/UserMatchBetsResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/UserPlayedBetsResource.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/paeez/test/core/scheduledtasks/UserMatchBetsResultUpdateSceduledTaskTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/paeez/test/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTaskTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/paeez/test/base/Base.java" afterPath="$PROJECT_DIR$/src/test/java/com/paeez/test/base/Base.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/Bet.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/Bet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/constants/BetWinner.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/constants/BetWinner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/GenericBet.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/GenericBet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/GenericBetController.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/GenericBetController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/GenericBetResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/GenericBetResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/GenericBetService.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/GenericBetService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/GenericBetServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/GenericBetServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/paeez/test/core/repositories/GenericBetTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/paeez/test/core/repositories/GenericBetTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="00f16653-7b18-47b1-bdd0-93ba0906871a" name="Default" comment="" />
     <ignored path="paeez-app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -97,8 +72,8 @@
       <file leaf-file-name="UserPlayedBetsResultUpdateSceduledTaskTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/paeez/test/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTaskTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.172639" vertical-offset="3685" max-vertical-offset="4575">
-              <caret line="17" column="70" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
+            <state vertical-scroll-proportion="0.41265061" vertical-offset="3911" max-vertical-offset="4575">
+              <caret line="283" column="0" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8567#8583#0" expanded="true" />
@@ -1430,16 +1405,16 @@
       <updated>1420170162108</updated>
       <workItem from="1420170166106" duration="21669000" />
       <workItem from="1420220974281" duration="70000" />
-      <workItem from="1420224915965" duration="42312000" />
+      <workItem from="1420224915965" duration="42887000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64051000" />
+    <option name="totallyTimeSpent" value="64626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="23" width="1920" height="987" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1463,7 +1438,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6350762" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24618736" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1959,8 +1934,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/paeez/test/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTaskTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.172639" vertical-offset="3685" max-vertical-offset="4575">
-          <caret line="17" column="70" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
+        <state vertical-scroll-proportion="0.41265061" vertical-offset="3911" max-vertical-offset="4575">
+          <caret line="283" column="0" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#8567#8583#0" expanded="true" />

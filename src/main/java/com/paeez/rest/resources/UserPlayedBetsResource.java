@@ -1,29 +1,21 @@
-package com.paeez.core.model;
+package com.paeez.rest.resources;
 
+import com.paeez.core.model.UserPlayedBets;
 import com.paeez.core.services.constants.BetWinner;
 import com.paeez.core.services.constants.UserResult;
-import org.springframework.data.annotation.Id;
+import org.springframework.hateoas.ResourceSupport;
 
 /**
  * Created by Shrikant on 1/3/15.
  */
-public class UserMatchBets {
-    @Id
-    private String Id;
+public class UserPlayedBetsResource extends ResourceSupport {
+
     private String groupId;
     private String betsCartId;
-    private String matchBetId;
+    private String genericBetId;
     private BetWinner choice;
     private UserResult userResult;
     private String userId;
-
-    public String getId() {
-        return Id;
-    }
-
-    public void setId(String id) {
-        Id = id;
-    }
 
     public String getGroupId() {
         return groupId;
@@ -41,12 +33,12 @@ public class UserMatchBets {
         this.betsCartId = betsCartId;
     }
 
-    public String getMatchBetId() {
-        return matchBetId;
+    public String getGenericBetId() {
+        return genericBetId;
     }
 
-    public void setMatchBetId(String matchBetId) {
-        this.matchBetId = matchBetId;
+    public void setGenericBetId(String genericBetId) {
+        this.genericBetId = genericBetId;
     }
 
     public BetWinner getChoice() {
@@ -73,16 +65,15 @@ public class UserMatchBets {
         this.userId = userId;
     }
 
-    @Override
-    public String toString() {
-        return "UserMatchBets{" +
-                "Id='" + Id + '\'' +
-                ", groupId='" + groupId + '\'' +
-                ", betsCartId='" + betsCartId + '\'' +
-                ", matchId='" + matchBetId + '\'' +
-                ", choice=" + choice +
-                ", userResult=" + userResult +
-                ", userId='" + userId + '\'' +
-                '}';
+    public UserPlayedBets toUserPlayedBets() {
+        UserPlayedBets userPlayedBets = new UserPlayedBets();
+        userPlayedBets.setGroupId(this.getGroupId());
+        userPlayedBets.setBetsCartId(this.getBetsCartId());
+        userPlayedBets.setGenericBetId(this.getGenericBetId());
+        userPlayedBets.setUserId(this.getUserId());
+
+        //userMatchBets.setChoice(this.getChoice());
+
+        return userPlayedBets;
     }
 }

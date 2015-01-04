@@ -83,8 +83,9 @@ public class GenericBetController {
             method = RequestMethod.POST)
     public ResponseEntity<GenericBetResource> updateWinner(@PathVariable String betId, @PathVariable String winnerOption)
             throws Exception {
+        BetWinner bw = BetWinner.fromStringId(winnerOption);
         if (winnerOption != null) {
-            genericBetService.updateResult(betId, winnerOption);
+            genericBetService.updateResult(betId, bw);
             genericBetService.updateStatus(betId, BetStatus.CLOSED);
         }
 

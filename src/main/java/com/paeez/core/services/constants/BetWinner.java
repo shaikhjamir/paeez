@@ -5,7 +5,13 @@ package com.paeez.core.services.constants;
  */
 public enum BetWinner {
     ICONTEAM("iconTeam"),
-    CHALLENGERTEAM("challengerTeam");
+    CHALLENGERTEAM("challengerTeam"),
+    OPTIONA("optionA"),
+    OPTIONB("optionB"),
+    OPTIONC("optionC"),
+    OPTIOND("optionD"),
+    OPTIONE("optionE"),
+    OPTIONF("optionF");
 
     private String betWinnerId;
 

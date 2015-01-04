@@ -4,10 +4,12 @@ import com.paeez.core.model.GenericBet;
 import com.paeez.core.repositories.mongo.GenericBetRepository;
 import com.paeez.core.services.api.GenericBetService;
 import com.paeez.core.services.constants.BetStatus;
+import com.paeez.core.services.constants.BetWinner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.List;
 /**
  * Created by Shrikant on 1/3/15.
  */
+@Service
 public class GenericBetServiceImpl implements GenericBetService {
 
     @Autowired
@@ -61,7 +64,7 @@ public class GenericBetServiceImpl implements GenericBetService {
     }
 
     @Override
-    public void updateResult(String id, String winningOption) {
+    public void updateResult(String id, BetWinner winningOption) {
         GenericBet matchBet = genericBetRepository.findOne(id);
         matchBet.setWinningOption(winningOption);
         genericBetRepository.save(matchBet);

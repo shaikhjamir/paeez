@@ -2,6 +2,7 @@ package com.paeez.core.model;
 
 import com.paeez.core.services.constants.BetStatus;
 import com.paeez.core.services.constants.BetTypes;
+import com.paeez.core.services.constants.BetWinner;
 import org.springframework.data.annotation.Id;
 
 import java.util.Arrays;
@@ -27,8 +28,8 @@ public class GenericBet implements Bet{
 	private Date closingTime ; // This is the time till which Bets are to be accepted, after this elapses Bets should not be accepted
 	   						   // also the closingTime is used while displaying to the user, all Bets will be sorted based on closingTime
 	private long resultTime ; // Ideal time when the results will be declared
-	private List<String> options ; // options displayed such as Virat, Marsh etc. This should never be null rather should have at least 2 options
-    private String winningOption;
+	private Map<String, String> options ; // options displayed such as Virat, Marsh etc. This should never be null rather should have at least 2 options
+    private BetWinner winningOption;
 	private BetTypes betType;
 	private Map<String, Long> betMeasureByOptions;
 
@@ -83,11 +84,11 @@ public class GenericBet implements Bet{
 		this.resultTime = resultTime;
 	}
 
-	public List<String> getOptions() {
+	public Map<String, String> getOptions() {
 		return options;
 	}
 
-	public void setOptions(List<String> options) {
+	public void setOptions(Map<String, String> options) {
 		this.options = options;
 	}
 
@@ -108,11 +109,11 @@ public class GenericBet implements Bet{
 		this.betType = betType;
 	}
 
-	public String getWinningOption() {
+	public BetWinner getWinningOption() {
 		return winningOption;
 	}
 
-	public void setWinningOption(String winningOption) {
+	public void setWinningOption(BetWinner winningOption) {
 		this.winningOption = winningOption;
 	}
 

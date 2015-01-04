@@ -1,21 +1,29 @@
-package com.paeez.rest.resources;
+package com.paeez.core.model;
 
-import com.paeez.core.model.UserMatchBets;
 import com.paeez.core.services.constants.BetWinner;
 import com.paeez.core.services.constants.UserResult;
-import org.springframework.hateoas.ResourceSupport;
+import org.springframework.data.annotation.Id;
 
 /**
  * Created by Shrikant on 1/3/15.
  */
-public class UserMatchBetsResource extends ResourceSupport {
-
+public class UserPlayedBets {
+    @Id
+    private String Id;
     private String groupId;
     private String betsCartId;
-    private String matchBetId;
+    private String genericBetId;
     private BetWinner choice;
     private UserResult userResult;
     private String userId;
+
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String id) {
+        Id = id;
+    }
 
     public String getGroupId() {
         return groupId;
@@ -33,12 +41,12 @@ public class UserMatchBetsResource extends ResourceSupport {
         this.betsCartId = betsCartId;
     }
 
-    public String getMatchBetId() {
-        return matchBetId;
+    public String getGenericBetId() {
+        return genericBetId;
     }
 
-    public void setMatchId(String matchId) {
-        this.matchBetId = matchId;
+    public void setGenericBetId(String genericBetId) {
+        this.genericBetId = genericBetId;
     }
 
     public BetWinner getChoice() {
@@ -65,15 +73,16 @@ public class UserMatchBetsResource extends ResourceSupport {
         this.userId = userId;
     }
 
-    public UserMatchBets toUserMatchBets() {
-        UserMatchBets userMatchBets = new UserMatchBets();
-        userMatchBets.setGroupId(this.getGroupId());
-        userMatchBets.setBetsCartId(this.getBetsCartId());
-        userMatchBets.setMatchBetId(this.getMatchBetId());
-        userMatchBets.setUserId(this.getUserId());
-
-        //userMatchBets.setChoice(this.getChoice());
-
-        return userMatchBets;
+    @Override
+    public String toString() {
+        return "UserMatchBets{" +
+                "Id='" + Id + '\'' +
+                ", groupId='" + groupId + '\'' +
+                ", betsCartId='" + betsCartId + '\'' +
+                ", genericBetId='" + genericBetId + '\'' +
+                ", choice=" + choice +
+                ", userResult=" + userResult +
+                ", userId='" + userId + '\'' +
+                '}';
     }
 }

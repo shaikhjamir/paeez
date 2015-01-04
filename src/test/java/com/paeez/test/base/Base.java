@@ -2,10 +2,7 @@ package com.paeez.test.base;
 
 import com.paeez.Application;
 import com.paeez.core.repositories.mongo.*;
-import com.paeez.core.services.api.BetsCartServices;
-import com.paeez.core.services.api.GroupBetImportService;
-import com.paeez.core.services.api.MatchBetService;
-import com.paeez.core.services.api.UserMatchBetsService;
+import com.paeez.core.services.api.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -34,7 +31,7 @@ public abstract class Base {
     @Autowired
     public GroupUsersRepository groupUsersRepository;
     @Autowired
-    public UserMatchBetsRepository userMatchBetsRepository;
+    public UserPlayedBetsRepository userPlayedBetsRepository;
     @Autowired
     public MatchBetService matchBetService;
     @Autowired
@@ -42,7 +39,9 @@ public abstract class Base {
     @Autowired
     public GroupBetImportService groupBetImportService;
     @Autowired
-    public UserMatchBetsService userMatchBetsService;
+    public UserPlayedBetsService userPlayedBetsService;
+    @Autowired
+    public GenericBetService genericBetService;
 }
 
 

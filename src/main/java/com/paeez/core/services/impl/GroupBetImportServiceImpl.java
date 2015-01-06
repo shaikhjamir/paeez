@@ -13,12 +13,6 @@ import java.util.List;
 @Service
 public class GroupBetImportServiceImpl extends BaseService implements GroupBetImportService {
 
-//	private GroupBetImportRepository groupBetImportRepository;
-//
-//	@Autowired
-//	public GroupBetImportServiceImpl(GroupBetImportRepository groupBetImportRepository) {
-//		this.groupBetImportRepository = groupBetImportRepository;
-//	}
 	@Override
 	public GroupBetImport findByGroupIdAndBetsCartId(String groupId, String betsCartId) {
 		InputValidations.validateInputIdForNull("Either groupId or betsCartId is null/empty in" +
@@ -29,7 +23,7 @@ public class GroupBetImportServiceImpl extends BaseService implements GroupBetIm
 
 		GroupBetImport groupBetImport = groupBetImportRepository.findByGroupIdAndBetsCartId(groupId, betsCartId);
 
-		InputValidations.checkGroupBetImportFound(groupBetImport, "GroupBetImport entry not found for groupId "
+		InputValidations.validateForNull(groupBetImport, "GroupBetImport entry not found for groupId "
 					+ groupId + " and betsCartId" + betsCartId );
 
 		return groupBetImport;
@@ -41,7 +35,7 @@ public class GroupBetImportServiceImpl extends BaseService implements GroupBetIm
 		InputValidations.validateGroupExists(groupId, "Group with id " + groupId + " does not exists");
 		GroupBetImport groupBetImport = groupBetImportRepository.findByGroupId(groupId);
 
-		InputValidations.checkGroupBetImportFound(groupBetImport, "GroupBetImport not found for groupId " +
+		InputValidations.validateForNull(groupBetImport, "GroupBetImport not found for groupId " +
 				groupId);
 
 		return groupBetImport;
@@ -63,7 +57,7 @@ public class GroupBetImportServiceImpl extends BaseService implements GroupBetIm
 	@Override
 	public List<GroupBetImport> findByAll() {
 		List<GroupBetImport> groupBetImports = groupBetImportRepository.findAll();
-		InputValidations.checkGroupBetsImportFound(groupBetImports, "No GroupBetImports found");
+		InputValidations.validateForNull(groupBetImports, "No GroupBetImports found");
 		return groupBetImports;
 	}
 }

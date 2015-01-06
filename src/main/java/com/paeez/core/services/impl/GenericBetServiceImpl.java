@@ -5,7 +5,7 @@ import com.paeez.core.repositories.mongo.GenericBetRepository;
 import com.paeez.core.services.api.GenericBetService;
 import com.paeez.core.services.constants.BetStatus;
 import com.paeez.core.services.constants.BetWinner;
-import com.paeez.core.services.exceptions.InvalidGenericBetEntryEnception;
+import com.paeez.core.services.exceptions.GenericBetDoesNotExistException;
 import com.paeez.core.services.util.InputValidations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -22,29 +22,31 @@ import java.util.List;
 @Service
 public class GenericBetServiceImpl extends BaseService implements GenericBetService {
 
-//    @Autowired
-//    private GenericBetRepository genericBetRepository;
-//
-//    @Autowired
-//    private MongoOperations mongoOperations;
-
     @Override
     public void enterBet(GenericBet genericBet) {
-        InputValidations.validateGenericBetForNull(genericBet, "Error in entering generic bet");
+        InputValidations.validateForNull(genericBet, "Error in entering generic bet");
         genericBetRepository.save(genericBet);
     }
 
     @Override
     public List<GenericBet> findAll() {
         List<GenericBet> genericBets = genericBetRepository.findAll();
-        InputValidations.checkGenericBetsFound(genericBets, "No generic bets available in store");
+
+        if (genericBets == null)
+            throw new GenericBetDoesNotExistException("No generic bets available in store");
+
         return genericBets;
     }
 
     @Override
     public GenericBet findById(String id) {
+
+        InputValidations.validateInputIdForNull("GenericBetId cannot be null/empty", id);
         GenericBet genericBet = genericBetRepository.findById(id);
-        InputValidations.checkGenericBetFound(genericBet, id);
+
+        if (genericBet == null)
+            throw new GenericBetDoesNotExistException("GenericBet does not exists with id " + id);
+
         return genericBet;
     }
 
@@ -53,7 +55,10 @@ public class GenericBetServiceImpl extends BaseService implements GenericBetServ
         Query query = new Query();
         query.addCriteria(Criteria.where("closingTime").gt((Date) new Date()));
         List<GenericBet> genericBets = mongoOperations.find(query, GenericBet.class);
-        InputValidations.checkGenericBetsFound(genericBets, "No active generic bets available in store");
+
+        if (genericBets == null || genericBets.size() == 0)
+            throw new GenericBetDoesNotExistException("No active generic bets available in store");
+
         return genericBets;
     }
 
@@ -62,15 +67,22 @@ public class GenericBetServiceImpl extends BaseService implements GenericBetServ
         Query query = new Query();
         query.addCriteria(Criteria.where("status").is(BetStatus.CLOSED));
         List<GenericBet> genericBets = mongoOperations.find(query, GenericBet.class);
-        InputValidations.checkGenericBetsFound(genericBets, "No closed generic bets available in store");
+
+        if (genericBets == null || genericBets.size() == 0)
+            throw new GenericBetDoesNotExistException("No closed generic bets available in store");
+
         return genericBets;
     }
 
     @Override
     public void updateStatus(String id, BetStatus betStatus) {
+        InputValidations.validateInputIdForNull("GenericBetId cannot be null/empty", id);
+
         GenericBet genericBet = genericBetRepository.findOne(id);
-        InputValidations.checkGenericBetFound(genericBet, "No generic bet found with genericBetId " + id +
-                " , failure in updating status");
+
+        if (genericBet == null)
+            throw new GenericBetDoesNotExistException("No generic bet found with genericBetId " + id +
+                    " , failure in updating status");
 
         genericBet.setStatus(betStatus);
         genericBetRepository.save(genericBet);
@@ -78,9 +90,13 @@ public class GenericBetServiceImpl extends BaseService implements GenericBetServ
 
     @Override
     public void updateResult(String id, BetWinner winningOption) {
+        InputValidations.validateInputIdForNull("GenericBetId cannot be null/empty", id);
+
         GenericBet genericBet = genericBetRepository.findOne(id);
-        InputValidations.checkGenericBetFound(genericBet, "No generic bet found with genericBetId " + id +
-                " , failure in updating result");
+
+        if (genericBet == null)
+            throw new GenericBetDoesNotExistException("No generic bet found with genericBetId " + id +
+                    " , failure in updating result");
 
         genericBet.setWinningOption(winningOption);
         genericBetRepository.save(genericBet);

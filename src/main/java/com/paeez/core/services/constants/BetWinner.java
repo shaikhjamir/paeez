@@ -1,5 +1,7 @@
 package com.paeez.core.services.constants;
 
+import com.paeez.core.services.util.InputValidations;
+
 /**
  * Created by Shrikant on 1/1/15.
  */
@@ -28,13 +30,11 @@ public enum BetWinner {
     }
 
     public static BetWinner fromStringId(String id) {
-        try {
+        InputValidations.validateInputIdForNull("Input id cannot be null", id);
             for (BetWinner bw : BetWinner.values()) {
                 if (id.equalsIgnoreCase(bw.getBetWinnerId()))
                     return bw;
             }
-        } catch (IllegalArgumentException e) {
-        }
         return null;
     }
 }

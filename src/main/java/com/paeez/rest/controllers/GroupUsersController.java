@@ -54,7 +54,6 @@ public class GroupUsersController {
 		}
 		return response.get(ResponseConstants.ADMIN_GROUPS) ;
     }
-	
 
 	@RequestMapping(value="/grpUsr/user", consumes="application/json")
 	@ResponseBody

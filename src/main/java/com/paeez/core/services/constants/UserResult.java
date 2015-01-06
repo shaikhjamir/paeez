@@ -1,5 +1,7 @@
 package com.paeez.core.services.constants;
 
+import com.paeez.core.services.util.InputValidations;
+
 /**
  * Created by Shrikant on 1/3/15.
  */
@@ -22,12 +24,10 @@ public enum UserResult {
     }
 
     public static UserResult fromStringId(String id) {
-        try {
-            for (UserResult ur : UserResult.values()) {
+        InputValidations.validateInputIdForNull("Input id cannot be null", id);
+        for (UserResult ur : UserResult.values()) {
                 if (id.equalsIgnoreCase(ur.getId()))
                     return ur;
-            }
-        } catch (IllegalArgumentException e) {
         }
         return null;
     }

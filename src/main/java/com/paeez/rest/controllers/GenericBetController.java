@@ -6,6 +6,8 @@ import com.paeez.core.services.api.GenericBetService;
 import com.paeez.core.services.api.MatchBetService;
 import com.paeez.core.services.constants.BetStatus;
 import com.paeez.core.services.constants.BetWinner;
+import com.paeez.core.services.exceptions.NullArgumentException;
+import com.paeez.core.services.util.InputValidations;
 import com.paeez.rest.resources.GenericBetResource;
 import com.paeez.rest.resources.MatchBetResource;
 import com.paeez.rest.resources.asm.GenericBetResourceAsm;
@@ -37,6 +39,7 @@ public class GenericBetController {
     public ResponseEntity<List<GenericBetResource>> findAllBets()
     {
         List<GenericBet> genericBets = genericBetService.findAll();
+        
         List<GenericBetResource> genericBetsRes = new ArrayList<GenericBetResource>();
         for (GenericBet genericBet : genericBets ) {
             genericBetsRes.add(new GenericBetResourceAsm().toResource(genericBet));
@@ -58,15 +61,11 @@ public class GenericBetController {
     public ResponseEntity<GenericBetResource> getBet(@PathVariable String betId)
     {
         GenericBet genericBet = genericBetService.findById(betId);
-        if(genericBet != null) {
-            GenericBetResource res = new GenericBetResourceAsm().toResource(genericBet);
-            return new ResponseEntity<GenericBetResource>(res, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<GenericBetResource>(HttpStatus.NOT_FOUND);
-        }
-    }
+        GenericBetResource res = new GenericBetResourceAsm().toResource(genericBet);
+        return new ResponseEntity<GenericBetResource>(res, HttpStatus.OK);
+     }
     @RequestMapping(value="/bet-entry",
-            method = RequestMethod.POST)
+            method = RequestMethod.PUT)
     public ResponseEntity<GenericBetResource> createBetEntry(
             @RequestBody GenericBetResource sentBet) throws Exception {
 
@@ -81,20 +80,18 @@ public class GenericBetController {
 
     @RequestMapping(value="/{betId}/{winnerOption}",
             method = RequestMethod.POST)
-    public ResponseEntity<GenericBetResource> updateWinner(@PathVariable String betId, @PathVariable String winnerOption)
-            throws Exception {
+    public ResponseEntity<GenericBetResource> updateWinner(@PathVariable String betId, @PathVariable String winnerOption) {
+
         BetWinner bw = BetWinner.fromStringId(winnerOption);
-        if (winnerOption != null) {
-            genericBetService.updateResult(betId, bw);
-            genericBetService.updateStatus(betId, BetStatus.CLOSED);
-        }
+        genericBetService.updateResult(betId, bw);
+        genericBetService.updateStatus(betId, BetStatus.CLOSED);
 
         GenericBet updatedGenericBet = genericBetService.findById(betId);
         GenericBetResource updatedResource = new GenericBetResourceAsm().toResource(updatedGenericBet);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create(updatedResource.getLink("self").getHref()));
-        return new ResponseEntity<GenericBetResource>(updatedResource, headers, HttpStatus.CREATED);
+        return new ResponseEntity<GenericBetResource>(updatedResource, headers, HttpStatus.OK);
     }
 
 }

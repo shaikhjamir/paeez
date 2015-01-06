@@ -18,16 +18,6 @@ import java.util.List;
 @Service
 public class UserPlayedBetsServiceImpl extends BaseService implements UserPlayedBetsService {
 
-//    private UserPlayedBetsRepository userPlayedBetsRepository;
-//
-//    @Autowired
-//    private MongoOperations mongoOperations;
-//
-//    @Autowired
-//    public UserPlayedBetsServiceImpl(UserPlayedBetsRepository userPlayedBetsRepository) {
-//        this.userPlayedBetsRepository = userPlayedBetsRepository;
-//    }
-
     @Override
     public void putBet(UserPlayedBets userPlayedBets) {
         InputValidations.validateForNull(userPlayedBets, "UserPlayedBets cannot be null");
@@ -44,7 +34,8 @@ public class UserPlayedBetsServiceImpl extends BaseService implements UserPlayed
     //This just returns bets whose results are not updated
     @Override
     public UserPlayedBets findByGenericBetId(String genericBetId) {
-        InputValidations.validateInputIdForNull(genericBetId, "genericBetId cannot be null/empty");
+        InputValidations.validateInputIdForNull("genericBetId cannot be null/empty", genericBetId);
+
         UserPlayedBets userPlayedBets =  userPlayedBetsRepository.findByGenericBetId(genericBetId);
 
         InputValidations.validateForNull(userPlayedBets, "No user played bets exists for genericBetId " + genericBetId);
@@ -54,7 +45,7 @@ public class UserPlayedBetsServiceImpl extends BaseService implements UserPlayed
     @Override
     public List<UserPlayedBets> findByGenericBetIdAndUserResult(String genericBetId) {
 
-        InputValidations.validateInputIdForNull(genericBetId, "genericBetId cannot be null/empty");
+        InputValidations.validateInputIdForNull("genericBetId cannot be null/empty", genericBetId);
 
         Query query = new Query();
         query.addCriteria(Criteria.where("userResult").is(null).andOperator(Criteria.where("genericBetId").is(genericBetId)));

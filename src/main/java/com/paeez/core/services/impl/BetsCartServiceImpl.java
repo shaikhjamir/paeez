@@ -4,6 +4,7 @@ import com.paeez.core.model.Bet;
 import com.paeez.core.model.BetsCart;
 import com.paeez.core.repositories.mongo.BetsCartRepository;
 import com.paeez.core.services.api.BetsCartService;
+import com.paeez.core.services.exceptions.BetsCartDoesNotExistsException;
 import com.paeez.core.services.util.InputValidations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,15 +20,16 @@ public class BetsCartServiceImpl extends BaseService implements BetsCartService 
 
     @Override
     public void save(BetsCart betsCart) {
-        InputValidations.validateBetsCartForNull(betsCart, "Null betsCart send, failure in BetsCartService.save");
+        InputValidations.validateForNull(betsCart, "Null betsCart send, failure in BetsCartService.save");
         betsCartRepository.save(betsCart);
     }
 
     @Override
     public List<BetsCart> findAll() {
         List<BetsCart> betsCarts = betsCartRepository.findAll();
+        if (betsCarts == null)
+            throw new BetsCartDoesNotExistsException("No betsCart found in store");
 
-        InputValidations.checkBetsCartsFound(betsCarts, "No betsCart found in store");
         return betsCarts;
     }
 
@@ -35,7 +37,10 @@ public class BetsCartServiceImpl extends BaseService implements BetsCartService 
     public BetsCart findById(String id) {
         InputValidations.validateInputIdForNull("BetsCartId cannot be null or empty", id);
         BetsCart betsCart = betsCartRepository.findById(id);
-        InputValidations.checkBetsCartFound(betsCart, "No betsCart found for given betsCartId " + id);
+
+        if (betsCart == null)
+            throw new BetsCartDoesNotExistsException("No betsCart found for given betsCartId " + id);
+
         return betsCart;
     }
 
@@ -44,9 +49,12 @@ public class BetsCartServiceImpl extends BaseService implements BetsCartService 
         InputValidations.validateInputIdForNull("BetsCartId cannot be null or empty in BetsCartService.addBetToCart",
                                                 cartId);
 
+        InputValidations.validateForNull(betInstance, "BetInstance cannot be null");
+
         BetsCart betsCart = findById(cartId);
 
-        InputValidations.checkBetsCartFound(betsCart, "No betsCart found for given betsCartId " + cartId);
+        if (betsCart == null)
+            throw new BetsCartDoesNotExistsException("No betsCart found for given betsCartId " + cartId);
 
         List <Bet> bets = betsCart.getBets();
         if (bets == null)

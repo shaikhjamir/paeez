@@ -20,17 +20,7 @@ import java.util.List;
  */
 
 @Service
-public class MatchBetServiceImpl implements MatchBetService {
-
-    private MatchBetRepository matchBetRepository;
-
-    @Autowired
-    private MongoOperations mongoOperations;
-
-    @Autowired
-    public MatchBetServiceImpl(MatchBetRepository matchBetRepository) {
-        this.matchBetRepository = matchBetRepository;
-    }
+public class MatchBetServiceImpl extends BaseService implements MatchBetService {
 
     public void enterBet(MatchBet matchBet) {
         matchBetRepository.save(matchBet);

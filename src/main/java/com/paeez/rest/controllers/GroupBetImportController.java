@@ -46,39 +46,14 @@ public class GroupBetImportController {
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.setLocation(URI.create(updatedResource.getLink("self").getHref()));
-		return new ResponseEntity<GroupBetImportResource>(updatedResource, headers, HttpStatus.CREATED);
+		return new ResponseEntity<GroupBetImportResource>(updatedResource, headers, HttpStatus.OK);
 	}
 
 	@RequestMapping(value="/{groupId}/groupbetimportinfo",
 			method = RequestMethod.GET)
-	public ResponseEntity<GroupBetImportResource> getGroupBetImport(@PathVariable String groupId)
-	{
+	public ResponseEntity<GroupBetImportResource> getGroupBetImport(@PathVariable String groupId) {
 		GroupBetImport groupBetImport = groupBetImportService.findByGroupId(groupId);
-		if(groupBetImport != null) {
-			GroupBetImportResource res = new GroupBetImportResourceAsm().toResource(groupBetImport);
-			return new ResponseEntity<GroupBetImportResource>(res, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<GroupBetImportResource>(HttpStatus.NOT_FOUND);
-		}
+		GroupBetImportResource res = new GroupBetImportResourceAsm().toResource(groupBetImport);
+		return new ResponseEntity<GroupBetImportResource>(res, HttpStatus.OK);
 	}
-
-//	@Autowired
-//	private GroupBetImportServiceImpl groupBetImportBO;
-//
-//	@RequestMapping(value="/grpBetImport/{userId}/{grpId}/import/{globalBetId}")
-//    public List<String> importGlobalBet(@PathVariable("userId") String userId, @PathVariable("grpId") String grpId, @PathVariable("globalBetId") String globalBetId) {
-//
-//		WSResponse response = new WSResponse() ;
-//		groupBetImportBO.importBet(response, userId, grpId, globalBetId) ;
-//		return response.getMessages() ;
-//    }
-//
-//	@RequestMapping(value="/grpBetImport/{userId}/{grpId}/list")
-//    public List<GroupBetImport> listImportedBets(@PathVariable("userId") String userId, @PathVariable("grpId") String grpId) {
-//
-//		WSResponse response = new WSResponse() ;
-//		groupBetImportBO.listImportedBets(response, userId, grpId) ;
-//		return (List<GroupBetImport>)response.get(ResponseConstants.LIST_IMPORTED_BETS) ;
-//    }
-
 }

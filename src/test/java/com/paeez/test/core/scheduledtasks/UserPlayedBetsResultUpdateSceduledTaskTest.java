@@ -102,9 +102,9 @@ public class UserPlayedBetsResultUpdateSceduledTaskTest extends Base {
 
         //step 5 create a cart
         BetsCart betsCart = new BetsCart();
-        betsCartServices.save(betsCart);
+        betsCartService.save(betsCart);
 
-        List<BetsCart> betsCarts = betsCartServices.findAll();
+        List<BetsCart> betsCarts = betsCartService.findAll();
         Assert.assertNotNull("betsCarts cannot be null", betsCarts);
         Assert.assertEquals("Incorrect number of betsCarts created", 1 ,betsCarts.size());
 
@@ -114,9 +114,9 @@ public class UserPlayedBetsResultUpdateSceduledTaskTest extends Base {
         List<Bet> betsList = new ArrayList<Bet>();
         betsList.add(matchBet);
         betsCarts.get(0).setBets(betsList);
-        betsCartServices.save(betsCart);
+        betsCartService.save(betsCart);
 
-        betsCarts = betsCartServices.findAll();
+        betsCarts = betsCartService.findAll();
         Assert.assertNotNull("betsCarts cannot be null", betsCarts);
         Assert.assertEquals("Incorrect number of betsCarts created", 1 ,betsCarts.size());
 
@@ -240,9 +240,9 @@ public class UserPlayedBetsResultUpdateSceduledTaskTest extends Base {
 
         //step 5 create a cart
         BetsCart betsCart = new BetsCart();
-        betsCartServices.save(betsCart);
+        betsCartService.save(betsCart);
 
-        List<BetsCart> betsCarts = betsCartServices.findAll();
+        List<BetsCart> betsCarts = betsCartService.findAll();
         Assert.assertNotNull("betsCarts cannot be null", betsCarts);
         Assert.assertEquals("Incorrect number of betsCarts created", 1 ,betsCarts.size());
 
@@ -252,9 +252,9 @@ public class UserPlayedBetsResultUpdateSceduledTaskTest extends Base {
         List<Bet> betsList = new ArrayList<Bet>();
         betsList.add(genericBets.get(0));
         betsCarts.get(0).setBets(betsList);
-        betsCartServices.save(betsCart);
+        betsCartService.save(betsCart);
 
-        betsCarts = betsCartServices.findAll();
+        betsCarts = betsCartService.findAll();
         Assert.assertNotNull("betsCarts cannot be null", betsCarts);
         Assert.assertEquals("Incorrect number of betsCarts created", 1 ,betsCarts.size());
 

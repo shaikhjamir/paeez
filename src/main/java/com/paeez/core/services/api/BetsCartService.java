@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Shrikant on 1/1/15.
  */
 @Service
-public interface BetsCartServices {
+public interface BetsCartService {
 
     public void save(BetsCart betsCart);
     public List<BetsCart> findAll();

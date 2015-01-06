@@ -35,7 +35,7 @@ public abstract class Base {
     @Autowired
     public MatchBetService matchBetService;
     @Autowired
-    public BetsCartServices betsCartServices;
+    public BetsCartService betsCartService;
     @Autowired
     public GroupBetImportService groupBetImportService;
     @Autowired

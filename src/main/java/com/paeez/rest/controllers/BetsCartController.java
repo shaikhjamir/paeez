@@ -5,7 +5,7 @@ import com.paeez.core.model.MatchBet;
 import com.paeez.rest.resources.BetIdResource;
 import com.paeez.rest.resources.BetsCartResource;
 import com.paeez.rest.resources.asm.BetsCartResourceAsm;
-import com.paeez.core.services.api.BetsCartServices;
+import com.paeez.core.services.api.BetsCartService;
 import com.paeez.core.services.api.MatchBetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -27,19 +27,19 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 @RequestMapping("/betscart")
 public class BetsCartController {
 
-    private BetsCartServices betsCartServices;
+    private BetsCartService betsCartService;
     private MatchBetService matchBetService;
 
     @Autowired
-    public BetsCartController(BetsCartServices betsCartServices, MatchBetService matchBetService) {
-        this.betsCartServices = betsCartServices;
+    public BetsCartController(BetsCartService betsCartService, MatchBetService matchBetService) {
+        this.betsCartService = betsCartService;
         this.matchBetService = matchBetService;
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<BetsCartResource>> findAllBets()
     {
-        List<BetsCart> betsCarts = betsCartServices.findAll();
+        List<BetsCart> betsCarts = betsCartService.findAll();
         List<BetsCartResource> betsCartRes = new ArrayList<BetsCartResource>();
         for (BetsCart betsCart : betsCarts ) {
             betsCartRes.add(new BetsCartResourceAsm().toResource(betsCart));
@@ -56,7 +56,7 @@ public class BetsCartController {
         try {
             matchBetInstance = matchBetService.findById(betIdResource.getBetId());
             if (matchBetInstance != null) {
-                updatedBetsCart = betsCartServices.addBetToCart(betCartId, matchBetInstance);
+                updatedBetsCart = betsCartService.addBetToCart(betCartId, matchBetInstance);
 
                 updatedBetsCartResource = new BetsCartResourceAsm().toResource(updatedBetsCart);
                 updatedBetsCartResource.add(linkTo(MatchBetController.class).slash(matchBetInstance.getId()).slash("betinfo").withRel("matchbet"));
@@ -77,7 +77,7 @@ public class BetsCartController {
             @RequestBody BetsCartResource sentBetsCart) throws Exception {
 
         BetsCart createdBetsCart = sentBetsCart.toBetsCart();
-        betsCartServices.save(createdBetsCart);
+        betsCartService.save(createdBetsCart);
         BetsCartResource createdResource = new BetsCartResourceAsm().toResource(createdBetsCart);
 
         HttpHeaders headers = new HttpHeaders();

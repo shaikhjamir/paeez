@@ -3,6 +3,7 @@ package com.paeez.core.services.impl;
 import com.paeez.core.model.UserPlayedBets;
 import com.paeez.core.repositories.mongo.UserPlayedBetsRepository;
 import com.paeez.core.services.api.UserPlayedBetsService;
+import com.paeez.core.services.util.InputValidations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -15,43 +16,57 @@ import java.util.List;
  * Created by Shrikant on 1/3/15.
  */
 @Service
-public class UserPlayedBetsServiceImpl implements UserPlayedBetsService {
+public class UserPlayedBetsServiceImpl extends BaseService implements UserPlayedBetsService {
 
-    private UserPlayedBetsRepository userPlayedBetsRepository;
-
-    @Autowired
-    private MongoOperations mongoOperations;
-
-    @Autowired
-    public UserPlayedBetsServiceImpl(UserPlayedBetsRepository userPlayedBetsRepository) {
-        this.userPlayedBetsRepository = userPlayedBetsRepository;
-    }
+//    private UserPlayedBetsRepository userPlayedBetsRepository;
+//
+//    @Autowired
+//    private MongoOperations mongoOperations;
+//
+//    @Autowired
+//    public UserPlayedBetsServiceImpl(UserPlayedBetsRepository userPlayedBetsRepository) {
+//        this.userPlayedBetsRepository = userPlayedBetsRepository;
+//    }
 
     @Override
     public void putBet(UserPlayedBets userPlayedBets) {
+        InputValidations.validateForNull(userPlayedBets, "UserPlayedBets cannot be null");
         userPlayedBetsRepository.save(userPlayedBets);
     }
 
     @Override
     public void updateResult(UserPlayedBets userPlayedBets) {
+
+        InputValidations.validateForNull(userPlayedBets, "UserPlayedBets cannot be null");
         userPlayedBetsRepository.save(userPlayedBets);
     }
 
     //This just returns bets whose results are not updated
     @Override
     public UserPlayedBets findByGenericBetId(String genericBetId) {
-        return userPlayedBetsRepository.findByGenericBetId(genericBetId);
+        InputValidations.validateInputIdForNull(genericBetId, "genericBetId cannot be null/empty");
+        UserPlayedBets userPlayedBets =  userPlayedBetsRepository.findByGenericBetId(genericBetId);
+
+        InputValidations.validateForNull(userPlayedBets, "No user played bets exists for genericBetId " + genericBetId);
+        return userPlayedBets;
     }
 
     @Override
     public List<UserPlayedBets> findByGenericBetIdAndUserResult(String genericBetId) {
+
+        InputValidations.validateInputIdForNull(genericBetId, "genericBetId cannot be null/empty");
+
         Query query = new Query();
         query.addCriteria(Criteria.where("userResult").is(null).andOperator(Criteria.where("genericBetId").is(genericBetId)));
+
         return mongoOperations.find(query, UserPlayedBets.class);
     }
 
     @Override
     public List<UserPlayedBets> findAll() {
-        return userPlayedBetsRepository.findAll();
+        List<UserPlayedBets> userPlayedBets = userPlayedBetsRepository.findAll();
+
+        InputValidations.validateForNull(userPlayedBets, "No user played bets found");
+        return userPlayedBets;
     }
 }

@@ -17,25 +17,17 @@ import java.util.Map;
 public class GenericBetResource extends ResourceSupport{
 
     private String description ; // can be question like who will score max runs
-    private String createdTime ;   // creation of this Bet this is not at realted to the actual Bet
-    private String lastModifiedTime ; //
+
+    private Date createdTime ;   // creation of this Bet this is not at realted to the actual Bet
+    private Date lastModifiedTime ; //
     private BetStatus status ; // can be active, closed
     private String createdBy ; // user who created this
-    private String closingTime ; // This is the time till which Bets are to be accepted, after this elapses Bets should not be accepted
+    private Date closingTime ; // This is the time till which Bets are to be accepted, after this elapses Bets should not be accepted
     // also the closingTime is used while displaying to the user, all Bets will be sorted based on closingTime
-    private long resultTime ; // Ideal time when the results will be declared
+
     private Map<BetOptions, String> options ; // options displayed such as Virat, Marsh etc. This should never be null rather should have at least 2 options
-    private String winningOption;
+    private BetOptions winningOption;
     private BetTypes betType;
-    private Map<String, Long> betMeasureByOptions;
-
-    public Map<String, Long> getBetMeasureByOptions() {
-        return betMeasureByOptions;
-    }
-
-    public void setBetMeasureByOptions(Map<String, Long> betMeasureByOptions) {
-        this.betMeasureByOptions = betMeasureByOptions;
-    }
 
     public String getDescription() {
         return description;
@@ -43,6 +35,22 @@ public class GenericBetResource extends ResourceSupport{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Date getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    public Date getLastModifiedTime() {
+        return lastModifiedTime;
+    }
+
+    public void setLastModifiedTime(Date lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
     }
 
     public BetStatus getStatus() {
@@ -61,12 +69,12 @@ public class GenericBetResource extends ResourceSupport{
         this.createdBy = createdBy;
     }
 
-    public long getResultTime() {
-        return resultTime;
+    public Date getClosingTime() {
+        return closingTime;
     }
 
-    public void setResultTime(long resultTime) {
-        this.resultTime = resultTime;
+    public void setClosingTime(Date closingTime) {
+        this.closingTime = closingTime;
     }
 
     public Map<BetOptions, String> getOptions() {
@@ -77,11 +85,11 @@ public class GenericBetResource extends ResourceSupport{
         this.options = options;
     }
 
-    public String getWinningOption() {
+    public BetOptions getWinningOption() {
         return winningOption;
     }
 
-    public void setWinningOption(String winningOption) {
+    public void setWinningOption(BetOptions winningOption) {
         this.winningOption = winningOption;
     }
 
@@ -92,29 +100,4 @@ public class GenericBetResource extends ResourceSupport{
     public void setBetType(BetTypes betType) {
         this.betType = betType;
     }
-
-    public String getCreatedTime() {
-        return createdTime;
-    }
-
-    public void setCreatedTime(String createdTime) {
-        this.createdTime = createdTime;
-    }
-
-    public String getLastModifiedTime() {
-        return lastModifiedTime;
-    }
-
-    public void setLastModifiedTime(String lastModifiedTime) {
-        this.lastModifiedTime = lastModifiedTime;
-    }
-
-    public String getClosingTime() {
-        return closingTime;
-    }
-
-    public void setClosingTime(String closingTime) {
-        this.closingTime = closingTime;
-    }
-
 }

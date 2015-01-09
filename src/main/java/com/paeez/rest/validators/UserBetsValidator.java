@@ -26,6 +26,7 @@ public class UserBetsValidator implements Validator {
     }
 
     public void validate(Object obj, Errors e) {
+        ValidationUtils.rejectIfEmptyOrWhitespace(e, "userId", "userId.null");
         ValidationUtils.rejectIfEmptyOrWhitespace(e, "groupId", "groupId.null");
         ValidationUtils.rejectIfEmptyOrWhitespace(e, "choice", "choice.null");
         ValidationUtils.rejectIfEmptyOrWhitespace(e, "genericBetId", "genericBetId.null");
@@ -42,5 +43,7 @@ public class UserBetsValidator implements Validator {
         //TODO check if choice is amongst the correct one from genericBet
 
         //TODO check if group exists
+
+        //TODO check if user exists
     }
 }

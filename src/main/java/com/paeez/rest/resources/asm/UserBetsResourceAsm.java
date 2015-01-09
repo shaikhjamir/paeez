@@ -17,15 +17,6 @@ public class UserBetsResourceAsm extends ResourceAssemblerSupport<UserBets, User
     }
 
     public UserBetsResource toResource(UserBets userBets) {
-//        UserBetsResource resource = new UserBetsResource();
-//        resource.setUserId(userBets.getUserId());
-//        resource.setGroupId(userBets.getGroupId());
-//        resource.setBetsCartId(userBets.getBetsCartId());
-//        resource.setGenericBetId(userBets.getGenericBetId());
-//
-//        resource.setChoice(userBets.getChoice());
-//        resource.setUserResult(userBets.getUserResult());
-
         UserBetsResource resource = createResourceWithId(userBets.getId(), userBets);
         resource.add(linkTo(UserBetsController.class).slash(userBets.getId()).slash("userbetsinfo").withSelfRel());
         return resource;

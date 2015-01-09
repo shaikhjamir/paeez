@@ -5,6 +5,8 @@ import com.paeez.core.services.constants.BetOptions;
 import com.paeez.core.services.constants.UserResult;
 import org.springframework.hateoas.ResourceSupport;
 
+import java.util.Map;
+
 /**
  * Created by Shrikant on 1/3/15.
  */
@@ -16,6 +18,7 @@ public class UserBetsResource extends ResourceSupport {
     private BetOptions choice;
     private UserResult userResult;
     private String userId;
+    private Map<BetOptions, Long> betMeasureByOptions;
 
     public String getGroupId() {
         return groupId;
@@ -65,4 +68,11 @@ public class UserBetsResource extends ResourceSupport {
         this.userId = userId;
     }
 
+    public Map<BetOptions, Long> getBetMeasureByOptions() {
+        return betMeasureByOptions;
+    }
+
+    public void setBetMeasureByOptions(Map<BetOptions, Long> betMeasureByOptions) {
+        this.betMeasureByOptions = betMeasureByOptions;
+    }
 }

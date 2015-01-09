@@ -1,13 +1,12 @@
 package com.paeez.core.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.paeez.core.services.constants.BetStatus;
 import com.paeez.core.services.constants.BetTypes;
-import com.paeez.core.services.constants.BetWinner;
+import com.paeez.core.services.constants.BetOptions;
 import org.springframework.data.annotation.Id;
 
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,12 +14,14 @@ import java.util.Map;
  * @author shaikhjamir
  *
  */
-public class GenericBet implements Bet{
+public class GenericBet {
 
 	@Id
 	private String id;
 	
 	private String description ; // can be question like who will score max runs
+
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date createdTime ;   // creation of this Bet this is not at realted to the actual Bet
 	private Date lastModifiedTime ; //
 	private BetStatus status ; // can be active, closed
@@ -28,10 +29,11 @@ public class GenericBet implements Bet{
 	private Date closingTime ; // This is the time till which Bets are to be accepted, after this elapses Bets should not be accepted
 	   						   // also the closingTime is used while displaying to the user, all Bets will be sorted based on closingTime
 	private long resultTime ; // Ideal time when the results will be declared
-	private Map<String, String> options ; // options displayed such as Virat, Marsh etc. This should never be null rather should have at least 2 options
-    private BetWinner winningOption;
+	// TODO change the
+	private Map<BetOptions, String> options ; // options displayed such as Virat, Marsh etc. This should never be null rather should have at least 2 options
+    private BetOptions winningOption;
 	private BetTypes betType;
-	private Map<String, Long> betMeasureByOptions;
+	private Map<String, Long> betMeasureByOptions; // TODO Remove this
 
 	public String getId() {
 		return id;
@@ -84,11 +86,11 @@ public class GenericBet implements Bet{
 		this.resultTime = resultTime;
 	}
 
-	public Map<String, String> getOptions() {
+	public Map<BetOptions, String> getOptions() {
 		return options;
 	}
 
-	public void setOptions(Map<String, String> options) {
+	public void setOptions(Map<BetOptions, String> options) {
 		this.options = options;
 	}
 
@@ -100,7 +102,6 @@ public class GenericBet implements Bet{
 		this.createdTime = createdTime;
 	}
 
-	@Override
 	public BetTypes getBetType() {
 		return betType;
 	}
@@ -109,11 +110,11 @@ public class GenericBet implements Bet{
 		this.betType = betType;
 	}
 
-	public BetWinner getWinningOption() {
+	public BetOptions getWinningOption() {
 		return winningOption;
 	}
 
-	public void setWinningOption(BetWinner winningOption) {
+	public void setWinningOption(BetOptions winningOption) {
 		this.winningOption = winningOption;
 	}
 

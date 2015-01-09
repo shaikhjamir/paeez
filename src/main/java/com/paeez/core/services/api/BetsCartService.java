@@ -1,7 +1,7 @@
 package com.paeez.core.services.api;
 
-import com.paeez.core.model.Bet;
 import com.paeez.core.model.BetsCart;
+import com.paeez.core.model.GenericBet;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,5 +15,5 @@ public interface BetsCartService {
     public void save(BetsCart betsCart);
     public List<BetsCart> findAll();
     public BetsCart findById(String id);
-    public BetsCart addBetToCart(String cartId, Bet betInstance);
+    public BetsCart addBetToCart(String cartId, GenericBet betInstance);
 }

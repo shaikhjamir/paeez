@@ -40,8 +40,5 @@ abstract public class BaseService {
 	@Autowired
 	protected UserPlayedBetsRepository userPlayedBetsRepository;
 
-	@Autowired
-	protected MatchBetRepository matchBetRepository;
-	
 }
 

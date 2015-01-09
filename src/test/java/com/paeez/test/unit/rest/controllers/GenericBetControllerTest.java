@@ -2,6 +2,7 @@ package com.paeez.test.unit.rest.controllers;
 
 import com.paeez.core.model.GenericBet;
 import com.paeez.core.services.api.GenericBetService;
+import com.paeez.core.services.constants.BetOptions;
 import com.paeez.core.services.constants.BetTypes;
 import com.paeez.core.services.exceptions.GenericBetDoesNotExistException;
 import com.paeez.rest.controllers.GenericBetController;
@@ -83,11 +84,11 @@ public class GenericBetControllerTest extends BaseTest {
         Date d = c.getTime();
         genericBet.setClosingTime(d);
 
-        Map<String, String> options = new HashMap<String, String>();
-        options.put("OPTIONA", "Kohli");
-        options.put("OPTIONB", "Smith");
-        options.put("OPTIONC", "Sharma");
-        options.put("OPTIOND", "Gayle");
+        Map<BetOptions, String> options = new HashMap<BetOptions, String>();
+        options.put(BetOptions.OPTIONA, "Kohli");
+        options.put(BetOptions.OPTIONB, "Smith");
+        options.put(BetOptions.OPTIONC, "Sharma");
+        options.put(BetOptions.OPTIOND, "Gayle");
         genericBet.setOptions(options);
 
         List<GenericBet> genericBetList = new ArrayList<GenericBet>();

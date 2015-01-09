@@ -1,23 +1,20 @@
 package com.paeez.rest.controllers;
 
 import com.paeez.core.model.GenericBet;
-import com.paeez.core.model.MatchBet;
 import com.paeez.core.services.api.GenericBetService;
-import com.paeez.core.services.api.MatchBetService;
 import com.paeez.core.services.constants.BetStatus;
-import com.paeez.core.services.constants.BetWinner;
-import com.paeez.core.services.exceptions.NullArgumentException;
-import com.paeez.core.services.util.InputValidations;
+import com.paeez.core.services.constants.BetOptions;
 import com.paeez.rest.resources.GenericBetResource;
-import com.paeez.rest.resources.MatchBetResource;
 import com.paeez.rest.resources.asm.GenericBetResourceAsm;
-import com.paeez.rest.resources.asm.MatchBetResourceAsm;
+import com.paeez.rest.validators.GenericBetValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +30,11 @@ public class GenericBetController {
     @Autowired
     public GenericBetController(GenericBetService genericBetService) {
         this.genericBetService = genericBetService;
+    }
+
+    @InitBinder
+    protected void initBinder(WebDataBinder binder) {
+        binder.setValidator(new GenericBetValidator());
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -67,11 +69,10 @@ public class GenericBetController {
     @RequestMapping(value="/bet-entry",
             method = RequestMethod.PUT)
     public ResponseEntity<GenericBetResource> createBetEntry(
-            @RequestBody GenericBetResource sentBet) throws Exception {
+            @Valid @RequestBody GenericBet sentBet) throws Exception {
 
-        GenericBet createdGenericBet = sentBet.toGenericBet();
-        genericBetService.enterBet(createdGenericBet);
-        GenericBetResource createdResource = new GenericBetResourceAsm().toResource(createdGenericBet);
+        genericBetService.enterBet(sentBet);
+        GenericBetResource createdResource = new GenericBetResourceAsm().toResource(sentBet);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create(createdResource.getLink("self").getHref()));
@@ -82,7 +83,7 @@ public class GenericBetController {
             method = RequestMethod.POST)
     public ResponseEntity<GenericBetResource> updateWinner(@PathVariable String betId, @PathVariable String winnerOption) {
 
-        BetWinner bw = BetWinner.fromStringId(winnerOption);
+        BetOptions bw = BetOptions.fromStringId(winnerOption);
         genericBetService.updateResult(betId, bw);
         genericBetService.updateStatus(betId, BetStatus.CLOSED);
 

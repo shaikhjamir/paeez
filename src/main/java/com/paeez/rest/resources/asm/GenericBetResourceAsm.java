@@ -2,7 +2,6 @@ package com.paeez.rest.resources.asm;
 
 import com.paeez.core.model.GenericBet;
 import com.paeez.rest.controllers.GenericBetController;
-import com.paeez.rest.controllers.MatchBetController;
 import com.paeez.rest.resources.GenericBetResource;
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
 

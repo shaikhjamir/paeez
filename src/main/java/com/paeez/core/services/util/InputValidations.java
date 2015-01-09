@@ -14,8 +14,6 @@ public class InputValidations {
     @Autowired
     private static UserRepository userRepository;
     @Autowired
-    private static MatchBetRepository matchBetRepository;
-    @Autowired
     private static BetsCartRepository betsCartRepository;
     @Autowired
     private static GroupUsersRepository groupUsersRepository;

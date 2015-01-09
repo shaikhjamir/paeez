@@ -3,6 +3,7 @@ package com.paeez.core.services.impl;
 import com.paeez.core.model.UserPlayedBets;
 import com.paeez.core.repositories.mongo.UserPlayedBetsRepository;
 import com.paeez.core.services.api.UserPlayedBetsService;
+import com.paeez.core.services.constants.UserResult;
 import com.paeez.core.services.util.InputValidations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -21,6 +22,7 @@ public class UserPlayedBetsServiceImpl extends BaseService implements UserPlayed
     @Override
     public void putBet(UserPlayedBets userPlayedBets) {
         InputValidations.validateForNull(userPlayedBets, "UserPlayedBets cannot be null");
+        userPlayedBets.setUserResult(UserResult.AWAITED);
         userPlayedBetsRepository.save(userPlayedBets);
     }
 
@@ -47,8 +49,9 @@ public class UserPlayedBetsServiceImpl extends BaseService implements UserPlayed
 
         InputValidations.validateInputIdForNull("genericBetId cannot be null/empty", genericBetId);
 
+        // trying to find where the result is awaited and BetId is equal to given BetId
         Query query = new Query();
-        query.addCriteria(Criteria.where("userResult").is(null).andOperator(Criteria.where("genericBetId").is(genericBetId)));
+        query.addCriteria(Criteria.where("userResult").is(UserResult.AWAITED).andOperator(Criteria.where("genericBetId").is(genericBetId)));
 
         return mongoOperations.find(query, UserPlayedBets.class);
     }

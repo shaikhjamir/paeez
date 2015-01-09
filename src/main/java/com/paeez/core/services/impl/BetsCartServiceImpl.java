@@ -1,7 +1,7 @@
 package com.paeez.core.services.impl;
 
-import com.paeez.core.model.Bet;
 import com.paeez.core.model.BetsCart;
+import com.paeez.core.model.GenericBet;
 import com.paeez.core.repositories.mongo.BetsCartRepository;
 import com.paeez.core.services.api.BetsCartService;
 import com.paeez.core.services.exceptions.BetsCartDoesNotExistsException;
@@ -45,7 +45,7 @@ public class BetsCartServiceImpl extends BaseService implements BetsCartService 
     }
 
     @Override
-    public BetsCart addBetToCart(String cartId, Bet betInstance) {
+    public BetsCart addBetToCart(String cartId, GenericBet betInstance) {
         InputValidations.validateInputIdForNull("BetsCartId cannot be null or empty in BetsCartService.addBetToCart",
                                                 cartId);
 
@@ -56,9 +56,12 @@ public class BetsCartServiceImpl extends BaseService implements BetsCartService 
         if (betsCart == null)
             throw new BetsCartDoesNotExistsException("No betsCart found for given betsCartId " + cartId);
 
-        List <Bet> bets = betsCart.getBets();
+        List <GenericBet> bets = betsCart.getBets();
         if (bets == null)
-            bets = new ArrayList<Bet>();
+            bets = new ArrayList<GenericBet>();
+        // Duplicate check to be done
+        // foreach {compare }
+
         bets.add(betInstance);
         betsCartRepository.save(betsCart);
 

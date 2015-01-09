@@ -8,4 +8,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface UserPlayedBetsRepository extends MongoRepository<UserPlayedBets, String> {
     public UserPlayedBets findByGenericBetId(String genericBetId);
+
+    //public UserPlayedBets findByGenericBetIdAnd(String genericBetId);
 }

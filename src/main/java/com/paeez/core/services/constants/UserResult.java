@@ -7,7 +7,8 @@ import com.paeez.core.services.util.InputValidations;
  */
 public enum UserResult {
     WON("won"),
-    LOST("lost");
+    LOST("lost"),
+    AWAITED("awaited");
 
     private String Id;
 

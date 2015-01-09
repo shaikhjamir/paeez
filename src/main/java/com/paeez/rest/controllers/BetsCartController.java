@@ -2,15 +2,12 @@ package com.paeez.rest.controllers;
 
 import com.paeez.core.model.BetsCart;
 import com.paeez.core.model.GenericBet;
-import com.paeez.core.model.MatchBet;
 import com.paeez.core.services.api.GenericBetService;
 import com.paeez.core.services.exceptions.BetsCartDoesNotExistsException;
 import com.paeez.core.services.util.InputValidations;
-import com.paeez.rest.resources.BetIdResource;
 import com.paeez.rest.resources.BetsCartResource;
 import com.paeez.rest.resources.asm.BetsCartResourceAsm;
 import com.paeez.core.services.api.BetsCartService;
-import com.paeez.core.services.api.MatchBetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -32,15 +29,13 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 public class BetsCartController {
 
     private BetsCartService betsCartService;
-    private MatchBetService matchBetService;
 
     @Autowired
     private GenericBetService genericBetService;
 
     @Autowired
-    public BetsCartController(BetsCartService betsCartService, MatchBetService matchBetService) {
+    public BetsCartController(BetsCartService betsCartService) {
         this.betsCartService = betsCartService;
-        this.matchBetService = matchBetService;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -58,42 +53,20 @@ public class BetsCartController {
     }
 
     @RequestMapping(value = "/{betCartId}/genericbet/add", method = RequestMethod.POST)
-    public ResponseEntity<BetsCartResource> addGenericBetToCart(@PathVariable(value="betCartId") String betCartId, @RequestBody BetIdResource betIdResource) {
+    public ResponseEntity<BetsCartResource> addGenericBetToCart(@PathVariable(value="betCartId") String betCartId, @RequestBody String genericBetId) {
 
         BetsCart updatedBetsCart = null;
         GenericBet genericBetInstance = null;
         BetsCartResource updatedBetsCartResource = null;
 
-        InputValidations.validateForNull(betIdResource, "Invalid input");
+        InputValidations.validateForNull(genericBetId, "Invalid input");
 
-        genericBetInstance = genericBetService.findById(betIdResource.getBetId());
+        genericBetInstance = genericBetService.findById(genericBetId);
 
         updatedBetsCart = betsCartService.addBetToCart(betCartId, genericBetInstance);
 
         updatedBetsCartResource = new BetsCartResourceAsm().toResource(updatedBetsCart);
-        updatedBetsCartResource.add(linkTo(MatchBetController.class).slash(genericBetInstance.getId()).slash("betinfo").withRel("genericbet"));
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(URI.create(updatedBetsCartResource.getLink("self").getHref()));
-        return new ResponseEntity<BetsCartResource>(updatedBetsCartResource, headers, HttpStatus.OK);
-    }
-
-    @RequestMapping(value = "/{betCartId}/matchbet/add", method = RequestMethod.POST)
-    public ResponseEntity<BetsCartResource> addBetToCart(@PathVariable(value="betCartId") String betCartId, @RequestBody BetIdResource betIdResource) {
-
-        BetsCart updatedBetsCart = null;
-        MatchBet matchBetInstance = null;
-        BetsCartResource updatedBetsCartResource = null;
-        try {
-            matchBetInstance = matchBetService.findById(betIdResource.getBetId());
-            if (matchBetInstance != null) {
-                updatedBetsCart = betsCartService.addBetToCart(betCartId, matchBetInstance);
-
-                updatedBetsCartResource = new BetsCartResourceAsm().toResource(updatedBetsCart);
-                updatedBetsCartResource.add(linkTo(MatchBetController.class).slash(matchBetInstance.getId()).slash("betinfo").withRel("matchbet"));
-            }
-        } catch (Exception e) {
-        }
+        updatedBetsCartResource.add(linkTo(GenericBetController.class).slash(genericBetInstance.getId()).slash("betinfo").withRel("genericbet"));
 
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create(updatedBetsCartResource.getLink("self").getHref()));

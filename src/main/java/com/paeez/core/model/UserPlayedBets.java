@@ -1,6 +1,6 @@
 package com.paeez.core.model;
 
-import com.paeez.core.services.constants.BetWinner;
+import com.paeez.core.services.constants.BetOptions;
 import com.paeez.core.services.constants.UserResult;
 import org.springframework.data.annotation.Id;
 
@@ -8,15 +8,26 @@ import org.springframework.data.annotation.Id;
  * Created by Shrikant on 1/3/15.
  */
 public class UserPlayedBets {
+
+    /**
+     * Below the fields
+     *  theoritically
+     *    GroupId+BetsCartId+GenericBetId+Choice is uniq
+     *    The above combination is uniq
+     *    The User can bet on another option
+     *    So basically when we insert this we need to add a duplicate check and if if exists then we need tp update that with the latest value
+     *    The User can also bet on other GenericId etc
+     */
     @Id
     private String Id;
     private String groupId;
     private String betsCartId;
     private String genericBetId;
-    private BetWinner choice;
+    private BetOptions choice;
     private UserResult userResult;
     private String userId;
 
+    // add the field private Map<String, Long> betMeasureByOptions; // TODO
     public String getId() {
         return Id;
     }
@@ -49,11 +60,11 @@ public class UserPlayedBets {
         this.genericBetId = genericBetId;
     }
 
-    public BetWinner getChoice() {
+    public BetOptions getChoice() {
         return choice;
     }
 
-    public void setChoice(BetWinner choice) {
+    public void setChoice(BetOptions choice) {
         this.choice = choice;
     }
 

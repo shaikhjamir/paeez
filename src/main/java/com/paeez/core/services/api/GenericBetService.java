@@ -1,9 +1,8 @@
 package com.paeez.core.services.api;
 
 import com.paeez.core.model.GenericBet;
-import com.paeez.core.model.MatchBet;
 import com.paeez.core.services.constants.BetStatus;
-import com.paeez.core.services.constants.BetWinner;
+import com.paeez.core.services.constants.BetOptions;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +20,6 @@ public interface GenericBetService {
     public List<GenericBet> findClosed();
 
     public void updateStatus(String id, BetStatus betStatus);
-    public void updateResult(String id, BetWinner winningOption);
+    public void updateResult(String id, BetOptions winningOption);
 }
 

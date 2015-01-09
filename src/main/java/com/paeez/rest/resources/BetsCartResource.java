@@ -1,7 +1,7 @@
 package com.paeez.rest.resources;
 
-import com.paeez.core.model.Bet;
 import com.paeez.core.model.BetsCart;
+import com.paeez.core.model.GenericBet;
 import org.springframework.hateoas.ResourceSupport;
 
 import java.util.ArrayList;
@@ -12,31 +12,18 @@ import java.util.List;
  */
 public class BetsCartResource extends ResourceSupport {
 
-   // private String betType;
-    private List<Bet> bets;
-
-//    public String getBetType() {
-//        return betType;
-//    }
-//
-//    public void setBetType(String type) {
-//        this.betType = betType;
-//    }
-
-    public List<Bet> getBets() {
+    private List<GenericBet> bets;
+    public List<GenericBet> getBets() {
         return bets;
     }
-
-    public void setBets(List<Bet> bets) {
+    public void setBets(List<GenericBet> bets) {
         this.bets = bets;
     }
 
     public BetsCart toBetsCart() throws Exception {
         //in create we are just creating empty bets list.
         BetsCart betsCart = new BetsCart();
-        List<Bet> bets = new ArrayList<>();
-        //betsCart.setType(this.getBetType());
-        //betsCart.setBets(this.getBets());
+        List<GenericBet> bets = new ArrayList<>();
         betsCart.setBets(bets);
         return betsCart;
     }

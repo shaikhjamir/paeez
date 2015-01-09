@@ -1,6 +1,7 @@
 package com.paeez.rest.resources;
 
 import com.paeez.core.model.GenericBet;
+import com.paeez.core.services.constants.BetOptions;
 import com.paeez.core.services.constants.BetStatus;
 import com.paeez.core.services.constants.BetTypes;
 import org.springframework.hateoas.ResourceSupport;
@@ -23,7 +24,7 @@ public class GenericBetResource extends ResourceSupport{
     private String closingTime ; // This is the time till which Bets are to be accepted, after this elapses Bets should not be accepted
     // also the closingTime is used while displaying to the user, all Bets will be sorted based on closingTime
     private long resultTime ; // Ideal time when the results will be declared
-    private Map<String, String> options ; // options displayed such as Virat, Marsh etc. This should never be null rather should have at least 2 options
+    private Map<BetOptions, String> options ; // options displayed such as Virat, Marsh etc. This should never be null rather should have at least 2 options
     private String winningOption;
     private BetTypes betType;
     private Map<String, Long> betMeasureByOptions;
@@ -68,11 +69,11 @@ public class GenericBetResource extends ResourceSupport{
         this.resultTime = resultTime;
     }
 
-    public Map<String, String> getOptions() {
+    public Map<BetOptions, String> getOptions() {
         return options;
     }
 
-    public void setOptions(Map<String, String> options) {
+    public void setOptions(Map<BetOptions, String> options) {
         this.options = options;
     }
 

@@ -11,7 +11,7 @@ public class BetsCart {
 
     @Id
     private String id;
-    private List<Bet> bets;
+    private List<GenericBet> bets;
 
     public String getId() {
         return id;
@@ -19,10 +19,10 @@ public class BetsCart {
     public void setId(String id) {
         this.id = id;
     }
-    public List<Bet> getBets() {
+    public List<GenericBet> getBets() {
         return bets;
     }
-    public void setBets(List<Bet> bets) {
+    public void setBets(List<GenericBet> bets) {
         this.bets = bets;
     }
 

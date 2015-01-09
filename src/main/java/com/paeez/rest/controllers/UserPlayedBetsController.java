@@ -49,9 +49,9 @@ public class UserPlayedBetsController {
     public ResponseEntity<UserPlayedBetsResource> createBetEntry(
             @RequestBody UserPlayedBetsResource sentBet) throws Exception {
 
-        UserPlayedBets createdMatchBet = sentBet.toUserPlayedBets();
-        userPlayedBetsService.putBet(createdMatchBet);
-        UserPlayedBetsResource createdResource = new UserPlayedBetsResourceAsm().toResource(createdMatchBet);
+        UserPlayedBets createdBet = sentBet.toUserPlayedBets();
+        userPlayedBetsService.putBet(createdBet);
+        UserPlayedBetsResource createdResource = new UserPlayedBetsResourceAsm().toResource(createdBet);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create(createdResource.getLink("self").getHref()));

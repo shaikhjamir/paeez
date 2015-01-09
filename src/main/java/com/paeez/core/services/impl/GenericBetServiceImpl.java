@@ -1,14 +1,11 @@
 package com.paeez.core.services.impl;
 
 import com.paeez.core.model.GenericBet;
-import com.paeez.core.repositories.mongo.GenericBetRepository;
 import com.paeez.core.services.api.GenericBetService;
 import com.paeez.core.services.constants.BetStatus;
-import com.paeez.core.services.constants.BetWinner;
+import com.paeez.core.services.constants.BetOptions;
 import com.paeez.core.services.exceptions.GenericBetDoesNotExistException;
 import com.paeez.core.services.util.InputValidations;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
@@ -25,6 +22,7 @@ public class GenericBetServiceImpl extends BaseService implements GenericBetServ
     @Override
     public void enterBet(GenericBet genericBet) {
         InputValidations.validateForNull(genericBet, "Error in entering generic bet");
+        genericBet.setCreatedTime(new Date());
         genericBetRepository.save(genericBet);
     }
 
@@ -89,7 +87,7 @@ public class GenericBetServiceImpl extends BaseService implements GenericBetServ
     }
 
     @Override
-    public void updateResult(String id, BetWinner winningOption) {
+    public void updateResult(String id, BetOptions winningOption) {
         InputValidations.validateInputIdForNull("GenericBetId cannot be null/empty", id);
 
         GenericBet genericBet = genericBetRepository.findOne(id);

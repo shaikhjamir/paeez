@@ -2,78 +2,70 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00f16653-7b18-47b1-bdd0-93ba0906871a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/validators/GenericBetValidator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/util/Utilities.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/Bet.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/MatchBet.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/MatchBetRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/MatchBetService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/MatchBetServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/MatchBetController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/BetIdResource.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/BetResource.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/MatchBetResource.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/MatchBetResourceAsm.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/model/Bet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/model/MatchBet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/repositories/mongo/MatchBetRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/services/api/MatchBetService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/services/constants/BetWinner.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/services/impl/MatchBetServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/controllers/MatchBetController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/BetIdResource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/BetResource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/MatchBetResource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/asm/MatchBetResourceAsm.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/constants/BetWinner.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/constants/BetOptions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/Application.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/Application.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/validators/BetsCartValidator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/UserBetsResourceAsm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/UserBetsService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/UserBetsServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/validators/UserBetsValidator.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/GroupBetImport.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/GroupBetImportRepository.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/GroupBetImportService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/UserPlayedBetsService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/GroupBetImportServiceImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/UserPlayedBetsServiceImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/GroupBetImportController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/GroupBetImportResource.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/GroupBetImportResourceAsm.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/UserPlayedBetsResourceAsm.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/model/GroupBetImport.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/model/UserPlayedBets.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/repositories/mongo/GroupBetImportRepository.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/repositories/mongo/UserPlayedBetsRepository.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTask.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/services/api/GroupBetImportService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/services/api/UserPlayedBetsService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/services/impl/GroupBetImportServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/services/impl/UserPlayedBetsServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/controllers/GroupBetImportController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/controllers/UserPlayedBetsController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/GroupBetImportResource.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/UserPlayedBetsResource.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/asm/GroupBetImportResourceAsm.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/asm/UserPlayedBetsResourceAsm.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/paeez/test/unit/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTaskTest.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/UserPlayedBets.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/UserBets.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/UserPlayedBetsRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/UserBetsRepository.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTask.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/scheduledtasks/UserBetsSceduledTask.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/UserPlayedBetsController.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/UserBetsController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/UserPlayedBetsResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/UserBetsResource.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/paeez/test/unit/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTaskTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/paeez/test/unit/core/scheduledtasks/UserBetsSceduledTaskTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/services/impl/BaseService.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/core/services/impl/BaseService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/paeez/test/base/BaseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/paeez/test/base/BaseTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/model/BetsCart.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/core/model/BetsCart.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/controllers/BetsCartController.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/rest/controllers/BetsCartController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/repositories/mongo/BetsCartRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/core/repositories/mongo/BetsCartRepository.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/BetsCartResource.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/BetsCartResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/services/api/BetsCartService.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/core/services/api/BetsCartService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/asm/BetsCartResourceAsm.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/asm/BetsCartResourceAsm.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/services/impl/BetsCartServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/core/services/impl/BetsCartServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/model/GenericBet.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/core/model/GenericBet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/controllers/GenericBetController.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/rest/controllers/GenericBetController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/paeez/test/unit/rest/controllers/GenericBetControllerTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/paeez/test/unit/rest/controllers/GenericBetControllerTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/GenericBetResource.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/GenericBetResource.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/asm/GenericBetResourceAsm.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/asm/GenericBetResourceAsm.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/services/api/GenericBetService.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/core/services/api/GenericBetService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/services/impl/GenericBetServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/core/services/impl/GenericBetServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/paeez/test/unit/core/repositories/GroupBetImportTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/paeez/test/unit/core/repositories/GroupBetImportTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/services/util/InputValidations.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/core/services/util/InputValidations.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/model/UserPlayedBets.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/core/model/UserPlayedBets.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/controllers/UserPlayedBetsController.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/rest/controllers/UserPlayedBetsController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/UserPlayedBetsResource.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/UserPlayedBetsResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/asm/UserPlayedBetsResourceAsm.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/rest/resources/asm/UserPlayedBetsResourceAsm.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTask.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/paeez/test/unit/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTaskTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/paeez/test/unit/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTaskTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/services/impl/UserPlayedBetsServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/core/services/impl/UserPlayedBetsServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paeez/core/services/constants/UserResult.class" afterPath="$PROJECT_DIR$/target/classes/com/paeez/core/services/constants/UserResult.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/Application.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/Application.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/BaseService.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/BaseService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/paeez/test/base/BaseTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/paeez/test/base/BaseTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/BetsCart.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/BetsCart.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/BetsCartController.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/BetsCartController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/BetsCartRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/BetsCartRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/BetsCartResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/BetsCartResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/BetsCartService.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/BetsCartService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/BetsCartResourceAsm.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/BetsCartResourceAsm.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/BetsCartServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/BetsCartServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/GenericBet.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/GenericBet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/GenericBetController.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/GenericBetController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/paeez/test/unit/rest/controllers/GenericBetControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/paeez/test/unit/rest/controllers/GenericBetControllerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/GenericBetResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/GenericBetResource.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/GenericBetResourceAsm.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/GenericBetResourceAsm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/GenericBetService.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/GenericBetService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/GenericBetServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/GenericBetServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/paeez/test/unit/core/repositories/GroupBetImportTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/paeez/test/unit/core/repositories/GroupBetImportTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/util/InputValidations.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/util/InputValidations.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/UserPlayedBets.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/model/UserPlayedBets.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/UserPlayedBetsController.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/UserPlayedBetsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/UserPlayedBetsRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/UserPlayedBetsRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/UserPlayedBetsResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/UserPlayedBetsResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTask.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/paeez/test/unit/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTaskTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/paeez/test/unit/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTaskTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/UserPlayedBetsServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/UserPlayedBetsServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/constants/UserResult.java" afterPath="$PROJECT_DIR$/src/main/java/com/paeez/core/services/constants/UserResult.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="paeez-app.iws" />
@@ -101,63 +93,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GenericBetController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/GenericBetController.java">
+      <file leaf-file-name="GenericBetResource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/GenericBetResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="898" max-vertical-offset="1530">
-              <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="235" max-vertical-offset="1125">
+              <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserBetsResource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/UserBetsResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserBetsValidator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/validators/UserBetsValidator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="219" max-vertical-offset="780">
+              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1189#1190#0" expanded="true" />
-                <element signature="e#1251#1252#0" expanded="true" />
+                <element signature="e#757#758#0" expanded="true" />
+                <element signature="e#808#809#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GenericBetService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/GenericBetService.java">
+      <file leaf-file-name="BetsCartValidator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/validators/BetsCartValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserPlayedBetsResultUpdateSceduledTask.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="73" max-vertical-offset="750">
-              <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GenericBetValidator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/validators/GenericBetValidator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-              <caret line="20" column="61" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#404#405#0" expanded="true" />
-                <element signature="e#457#458#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GenericBetResourceAsm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/GenericBetResourceAsm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="174" max-vertical-offset="720">
-              <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="129" max-vertical-offset="675">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -168,48 +142,29 @@
       <file leaf-file-name="GenericBet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/GenericBet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1545">
-              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="729" max-vertical-offset="1275">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BetsCartController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/BetsCartController.java">
+      <file leaf-file-name="UserBetsServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/UserBetsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="849" max-vertical-offset="1395">
-              <caret line="80" column="51" selection-start-line="80" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1610#1628#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1065">
+              <caret line="72" column="1" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BetsCartResource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/BetsCartResource.java">
+      <file leaf-file-name="UserBets.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/UserBets.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupBetImportController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/GroupBetImportController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46703297" vertical-offset="0" max-vertical-offset="975">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1125">
+              <caret line="24" column="26" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -217,11 +172,29 @@
       <file leaf-file-name="GenericBetServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/GenericBetServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="148" max-vertical-offset="1635">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1470">
               <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BetsCartServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/BetsCartServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="444" max-vertical-offset="990">
+              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/BaseService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6703297" vertical-offset="84" max-vertical-offset="630">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -234,20 +207,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/MatchBetServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/exceptions/BadRequestException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/services/exceptions/GenericBetDoesNotExistException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/exceptions/advices/BetsCartControllerAdvice.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/exceptions/advices/ControllerAdvice.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/exceptions/advices/BasicControllerAdvice.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/exceptions/ConflictException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/exceptions/ForbiddenException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/exceptions/NotFoundException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/exceptions/advices/ExceptionHandlerControllerAdvice.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/services/constants/BetStatus.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/services/constants/BetTypes.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/GroupUsersController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/GroupBetImportController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/paeez/test/base/Base.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/paeez/test/rest/controllers/GenericBetControllerTest.java" />
@@ -262,29 +221,43 @@
         <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/services/constants/BetOptions.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/services/constants/UserResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/UserPlayedBetsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/GenericBetResource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/GenericBetResourceAsm.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/UserPlayedBetsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/model/BetsCart.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/BetsCartService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/BaseService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/BetsCartServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/BetsCartResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/BetResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/BetIdResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paeez/Application.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/BetsCartController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/services/util/InputValidations.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/paeez/test/base/BaseTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/paeez/test/unit/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTaskTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/paeez/test/unit/rest/controllers/GenericBetControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/UserPlayedBetsRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/util/Utilities.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/model/GenericBet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/GenericBetController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/validators/GenericBetValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/GenericBetServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/BetsCartRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/scheduledtasks/UserBetsSceduledTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/UserBetsRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/model/UserBets.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/model/GenericBet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/model/BetsCart.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/BetsCartResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/BetsCartResourceAsm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/GenericBetResourceAsm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/UserBetsResourceAsm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/GenericBetResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/BetsCartServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/UserBetsResource.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/paeez/test/unit/core/scheduledtasks/UserBetsSceduledTaskTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/BaseService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/paeez/test/unit/core/repositories/GroupBetImportTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/paeez/test/base/BaseTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/BetsCartController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/GenericBetController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/UserBetsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/UserBetsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/UserBetsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/validators/UserBetsValidator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paeez/rest/validators/BetsCartValidator.java" />
       </list>
     </option>
   </component>
@@ -366,100 +339,6 @@
               <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testdata" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paeez-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paeez-master-boot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paeez-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paeez-master-boot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integration" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paeez-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paeez-master-boot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="base" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -498,6 +377,74 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paeez" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paeez-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paeez-master-boot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paeez" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paeez-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paeez-master-boot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paeez" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1001,15 +948,15 @@
       <workItem from="1420170166106" duration="21669000" />
       <workItem from="1420220974281" duration="70000" />
       <workItem from="1420224915965" duration="74485000" />
-      <workItem from="1420733293442" duration="23267000" />
+      <workItem from="1420733293442" duration="30336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119491000" />
+    <option name="totallyTimeSpent" value="126560000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="9" y="24" width="1920" height="987" extended-state="0" />
+    <frame x="9" y="24" width="1920" height="987" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1072,148 +1019,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/exceptions/GroupDoesNotExistsException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/exceptions/GroupAlreadyExistsException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/exceptions/GenericBetDoesNotExistException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/GroupBetImportResourceAsm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/BetsCartResourceAsm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-          <caret line="23" column="93" selection-start-line="23" selection-start-column="93" selection-end-line="23" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/Group.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/GroupAdminUsers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/GroupBetImport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/GroupUsers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/UserPlayedBets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
-          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/BetsCart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/BetsCartService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/GroupBetImportService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/UserPlayedBetsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/constants/BetOptions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/constants/BetStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/constants/BetTypes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
@@ -1230,57 +1035,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/BaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="720">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/BetsCartServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1140">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/GroupAdminUsersService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1695">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/GroupBetImportServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1035">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/GroupUsersService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1695">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/UserPlayedBetsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="1080">
-          <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1297,36 +1056,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="477" max-vertical-offset="1065">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/UserPlayedBetsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/GroupBetImportResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/UserPlayedBetsResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1334,14 +1065,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
           <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/paeez/test/base/BaseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="945">
-          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -1372,114 +1095,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/UserPlayedBetsRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/GenericBetResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="925" max-vertical-offset="1620">
-          <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/util/Utilities.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
           <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/BetsCartRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/paeez/test/unit/rest/controllers/GenericBetControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1260">
-          <caret line="89" column="50" selection-start-line="89" selection-start-column="50" selection-end-line="89" selection-end-column="50" />
-          <folding>
-            <element signature="e#3523#3543#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/paeez/test/unit/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTaskTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1705" max-vertical-offset="2595">
-          <caret line="93" column="39" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3000#3020#0" expanded="true" />
-            <element signature="e#4316#4328#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/GenericBet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1545">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/scheduledtasks/UserPlayedBetsResultUpdateSceduledTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="73" max-vertical-offset="750">
-          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/validators/GenericBetValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <caret line="20" column="61" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#404#405#0" expanded="true" />
-            <element signature="e#457#458#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/GenericBetResourceAsm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="174" max-vertical-offset="720">
-          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/GenericBetController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="898" max-vertical-offset="1530">
-          <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1189#1190#0" expanded="true" />
-            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1489,49 +1110,338 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
           <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
           <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/responses/ResponseConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/responses/WSResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/GroupAdminUsers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/GroupUsers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/BetsCartRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/scheduledtasks/UserBetsSceduledTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="615">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/repositories/mongo/UserBetsRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/BetsCartService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/hateoas/spring-hateoas/0.16.0.RELEASE/spring-hateoas-0.16.0.RELEASE.jar!/org/springframework/hateoas/ResourceSupport.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.4" vertical-offset="0" max-vertical-offset="1320">
+          <caret line="29" column="55" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
+          <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/GenericBetServiceImpl.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/hateoas/spring-hateoas/0.16.0.RELEASE/spring-hateoas-0.16.0.RELEASE.jar!/org/springframework/hateoas/mvc/ResourceAssemblerSupport.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="148" max-vertical-offset="1635">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        <state vertical-scroll-proportion="-5.84" vertical-offset="304" max-vertical-offset="855">
+          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/paeez/test/unit/core/scheduledtasks/UserBetsSceduledTaskTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1914" max-vertical-offset="2460">
+          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+          <folding>
+            <element signature="e#4289#4297#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/paeez/test/integration/GenericBetControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="24" max-vertical-offset="570">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/paeez/test/unit/rest/controllers/GenericBetControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="370" max-vertical-offset="1260">
+          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/paeez/test/unit/core/repositories/GroupBetImportTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/paeez/test/base/BaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
+          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/BetsCartController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="849" max-vertical-offset="1395">
-          <caret line="80" column="51" selection-start-line="80" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1230">
+          <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/GenericBetController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="909" max-vertical-offset="1500">
+          <caret line="69" column="39" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1610#1628#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/api/UserBetsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/UserBetsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
+          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/BetsCartResourceAsm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/GenericBetResourceAsm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="21" column="101" selection-start-line="21" selection-start-column="101" selection-end-line="21" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/asm/UserBetsResourceAsm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <caret line="28" column="85" selection-start-line="28" selection-start-column="85" selection-end-line="28" selection-end-column="85" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/BetsCartResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="600">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding>
+            <element signature="e#594#595#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/GenericBetResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="235" max-vertical-offset="1125">
+          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/BetsCart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="24" max-vertical-offset="825">
+          <caret line="16" column="45" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/validators/GenericBetValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6318681" vertical-offset="0" max-vertical-offset="546">
+          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/GroupUsersService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9120879" vertical-offset="1119" max-vertical-offset="1695">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/resources/UserBetsResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/UserBets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1125">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/validators/UserBetsValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="219" max-vertical-offset="780">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/validators/BetsCartValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="129" max-vertical-offset="675">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/rest/controllers/GroupBetImportController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/model/GenericBet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46703297" vertical-offset="0" max-vertical-offset="975">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="729" max-vertical-offset="1275">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/UserBetsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1065">
+          <caret line="72" column="1" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/GenericBetServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1470">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/BetsCartServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="990">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paeez/core/services/impl/BaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6703297" vertical-offset="84" max-vertical-offset="630">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

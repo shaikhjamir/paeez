@@ -4,10 +4,12 @@ import com.paeez.core.services.constants.BetOptions;
 import com.paeez.core.services.constants.UserResult;
 import org.springframework.data.annotation.Id;
 
+import java.util.Map;
+
 /**
  * Created by Shrikant on 1/3/15.
  */
-public class UserPlayedBets {
+public class UserBets {
 
     /**
      * Below the fields
@@ -26,8 +28,8 @@ public class UserPlayedBets {
     private BetOptions choice;
     private UserResult userResult;
     private String userId;
+    private Map<BetOptions, Long> betMeasureByOptions;
 
-    // add the field private Map<String, Long> betMeasureByOptions; // TODO
     public String getId() {
         return Id;
     }

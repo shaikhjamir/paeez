@@ -7,5 +7,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * Created by Shrikant on 1/1/15.
  */
 public interface BetsCartRepository extends MongoRepository<BetsCart, String> {
-    public BetsCart findById(String id);
+    public BetsCart findByIdAndGroupId(String groupId, String betsCartId) ;
+    public BetsCart findByGroupId(String groupId) ;
 }

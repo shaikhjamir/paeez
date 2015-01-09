@@ -1,12 +1,11 @@
 package com.paeez.core.scheduledtasks;
 
 import com.paeez.core.model.GenericBet;
-import com.paeez.core.model.UserPlayedBets;
+import com.paeez.core.model.UserBets;
 import com.paeez.core.services.api.GenericBetService;
-import com.paeez.core.services.api.UserPlayedBetsService;
+import com.paeez.core.services.api.UserBetsService;
 import com.paeez.core.services.constants.UserResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -15,10 +14,10 @@ import java.util.List;
  * Created by Shrikant on 1/3/15.
  */
 @Component
-public class UserPlayedBetsResultUpdateSceduledTask {
+public class UserBetsSceduledTask {
 
     @Autowired
-    private UserPlayedBetsService userPlayedBetsService;
+    private UserBetsService userBetsService;
 
     @Autowired
     private GenericBetService genericBetService;
@@ -28,15 +27,15 @@ public class UserPlayedBetsResultUpdateSceduledTask {
         List<GenericBet> closedGenericBets = genericBetService.findClosed();
         for (GenericBet genericBet : closedGenericBets) {
             //UserMatchBets userMatchBets = userMatchBetsServices.findByMatchBetId(matchBet.getId());
-            List<UserPlayedBets> userPlayedBets = userPlayedBetsService.findByGenericBetIdAndUserResult(genericBet.getId());
-            for (UserPlayedBets userPlayedBet : userPlayedBets) {
-                if (userPlayedBets != null && genericBet.getWinningOption() != null && userPlayedBet.getChoice() != null) {
+            List<UserBets> userBets = userBetsService.findByGenericBetIdAndUserResult(genericBet.getId());
+            for (UserBets userPlayedBet : userBets) {
+                if (userBets != null && genericBet.getWinningOption() != null && userPlayedBet.getChoice() != null) {
                     if (genericBet.getWinningOption().equals(userPlayedBet.getChoice()))
                         userPlayedBet.setUserResult(UserResult.WON);
                     else
                         userPlayedBet.setUserResult(UserResult.LOST);
 
-                    userPlayedBetsService.updateResult(userPlayedBet);
+                    userBetsService.updateResult(userPlayedBet);
                 }
             }
         }

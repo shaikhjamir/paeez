@@ -21,9 +21,6 @@ abstract public class BaseService {
 	
 	@Autowired
 	protected GlobalBetRepository globalBetRepo ;
-	
-	@Autowired
-	protected GroupBetImportRepository groupGlobalBetImportRepo ;
 
 	@Autowired
 	protected BetsCartRepository betsCartRepository;
@@ -35,10 +32,7 @@ abstract public class BaseService {
 	protected MongoOperations mongoOperations;
 
 	@Autowired
-	protected GroupBetImportRepository groupBetImportRepository;
-
-	@Autowired
-	protected UserPlayedBetsRepository userPlayedBetsRepository;
+	protected UserBetsRepository userBetsRepository;
 
 }
 

@@ -18,7 +18,7 @@ public class InputValidations {
     @Autowired
     private static GroupUsersRepository groupUsersRepository;
     @Autowired
-    private static UserPlayedBetsRepository userPlayedBetsRepository;
+    private static UserBetsRepository userBetsRepository;
 
     public static void validateInputIdForNull(String errorMessage, String ... Ids) {
         for (String id : Ids){

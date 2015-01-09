@@ -18,10 +18,7 @@ public class BetsCartResourceAsm extends ResourceAssemblerSupport<BetsCart, Bets
 
     @Override
     public BetsCartResource toResource(BetsCart betsCart) {
-        BetsCartResource resource = new BetsCartResource();
-        //resource.setBetType(betsCart.getBetType());
-        resource.setBets(betsCart.getBets());
-        resource.add(linkTo(BetsCartController.class).slash(betsCart.getId()).withSelfRel());
+        BetsCartResource resource = createResourceWithId(betsCart.getId(), betsCart);
         return resource;
-        }
+    }
 }

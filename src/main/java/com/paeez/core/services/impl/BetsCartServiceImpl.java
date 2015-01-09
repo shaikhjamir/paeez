@@ -36,7 +36,7 @@ public class BetsCartServiceImpl extends BaseService implements BetsCartService 
     @Override
     public BetsCart findById(String id) {
         InputValidations.validateInputIdForNull("BetsCartId cannot be null or empty", id);
-        BetsCart betsCart = betsCartRepository.findById(id);
+        BetsCart betsCart = betsCartRepository.findOne(id);
 
         if (betsCart == null)
             throw new BetsCartDoesNotExistsException("No betsCart found for given betsCartId " + id);
@@ -56,13 +56,13 @@ public class BetsCartServiceImpl extends BaseService implements BetsCartService 
         if (betsCart == null)
             throw new BetsCartDoesNotExistsException("No betsCart found for given betsCartId " + cartId);
 
-        List <GenericBet> bets = betsCart.getBets();
-        if (bets == null)
-            bets = new ArrayList<GenericBet>();
+        List <String> genericBetIds = betsCart.getGenericBetIds();
+        if (genericBetIds == null)
+            genericBetIds = new ArrayList<String>();
         // Duplicate check to be done
         // foreach {compare }
 
-        bets.add(betInstance);
+        genericBetIds.add(betInstance.getId());
         betsCartRepository.save(betsCart);
 
         return betsCart;

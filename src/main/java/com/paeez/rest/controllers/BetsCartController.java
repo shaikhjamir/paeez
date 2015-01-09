@@ -52,6 +52,14 @@ public class BetsCartController {
         return new ResponseEntity<List<BetsCartResource>>(betsCartRes, HttpStatus.OK);
     }
 
+    @RequestMapping(value="/{betsCartId}", method = RequestMethod.GET)
+    public ResponseEntity<BetsCartResource> findOne(@PathVariable(value="betCartId") String betsCartId) {
+        BetsCart betsCart = betsCartService.findById(betsCartId);
+
+        BetsCartResource betsCartRes = new BetsCartResourceAsm().toResource(betsCart);
+        return new ResponseEntity<BetsCartResource>(betsCartRes, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/{betCartId}/genericbet/add", method = RequestMethod.POST)
     public ResponseEntity<BetsCartResource> addGenericBetToCart(@PathVariable(value="betCartId") String betCartId, @RequestBody String genericBetId) {
 
@@ -76,11 +84,10 @@ public class BetsCartController {
     @RequestMapping(value="/create",
             method = RequestMethod.POST)
     public ResponseEntity<BetsCartResource> createBetsCartEntry(
-            @RequestBody BetsCartResource sentBetsCart) throws Exception {
+            @RequestBody BetsCart betsCart) throws Exception {
 
-        BetsCart createdBetsCart = sentBetsCart.toBetsCart();
-        betsCartService.save(createdBetsCart);
-        BetsCartResource createdResource = new BetsCartResourceAsm().toResource(createdBetsCart);
+        betsCartService.save(betsCart);
+        BetsCartResource createdResource = new BetsCartResourceAsm().toResource(betsCart);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create(createdResource.getLink("self").getHref()));

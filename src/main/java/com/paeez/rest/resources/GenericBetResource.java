@@ -117,28 +117,4 @@ public class GenericBetResource extends ResourceSupport{
         this.closingTime = closingTime;
     }
 
-    public GenericBet toGenericBet() throws Exception {
-        GenericBet genericBet = new GenericBet();
-        genericBet.setOptions(this.getOptions());
-        genericBet.setBetMeasureByOptions(this.getBetMeasureByOptions());
-        genericBet.setBetType(this.getBetType());
-        genericBet.setCreatedBy(this.getCreatedBy());
-        genericBet.setDescription(this.getDescription());
-
-        // Convert String to Date
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
-        String dateInString = this.getCreatedTime();
-        Date date = sdf.parse(dateInString);
-        genericBet.setCreatedTime(date);
-
-        dateInString = this.getClosingTime();
-        date = sdf.parse(dateInString);
-        genericBet.setClosingTime(date);
-
-
-        //genericBet.setResultTime(this.getResultTime());
-
-        return genericBet;
-
-    }
 }

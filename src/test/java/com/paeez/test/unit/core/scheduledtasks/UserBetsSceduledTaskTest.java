@@ -15,7 +15,7 @@ import java.util.*;
  * Created by Shrikant on 1/3/15.
  */
 
-public class UserPlayedBetsResultUpdateSceduledTaskTest extends BaseTest {
+public class UserBetsSceduledTaskTest extends BaseTest {
     @BeforeClass
     public static void beforeAll() {
         System.out.print("---Starting UserMatchBetsResultUpdateSceduledTaskTest");
@@ -39,7 +39,7 @@ public class UserPlayedBetsResultUpdateSceduledTaskTest extends BaseTest {
         userRepository.deleteAll();
         groupUsersRepository.deleteAll();
         betsCartRepository.deleteAll();
-        userPlayedBetsRepository.deleteAll();
+        userBetsRepository.deleteAll();
 
         //Step1: Create a group
         Group grp = new Group();
@@ -116,10 +116,10 @@ public class UserPlayedBetsResultUpdateSceduledTaskTest extends BaseTest {
 
         String testBetsCartId = betsCarts.get(0).getId();
 
-        //step 6 add match bet to cart
-        List<GenericBet> betsList = new ArrayList<GenericBet>();
-        betsList.add(genericBets.get(0));
-        betsCarts.get(0).setBets(betsList);
+        //step 6 add  bets to cart
+        List<String> genericBetIds = new ArrayList<String>();
+        genericBetIds.add(genericBets.get(0).getId());
+        betsCarts.get(0).setGenericBetIds(genericBetIds);
         betsCartService.save(betsCart);
 
         betsCarts = betsCartService.findAll();
@@ -127,28 +127,28 @@ public class UserPlayedBetsResultUpdateSceduledTaskTest extends BaseTest {
         Assert.assertEquals("Incorrect number of betsCarts created", 1 ,betsCarts.size());
 
         //step 7: Import betscart into group
-        GroupBetImport groupBetImport= new GroupBetImport();
-        groupBetImport.setBetsCartId(testBetsCartId);
-        groupBetImport.setGroupId(testGroupId);
-        groupBetImport.setImportedByUserEmailAddress(testUserEmailId);
-
-        groupBetImportService.update(groupBetImport);
-        GroupBetImport updatedGroupBetImport = groupBetImportService.findByGroupId(testGroupId);
-        Assert.assertNotNull("updatedGroupBetImport cannot be null", updatedGroupBetImport);
+//        GroupBetImport groupBetImport= new GroupBetImport();
+//        groupBetImport.setBetsCartId(testBetsCartId);
+//        groupBetImport.setGroupId(testGroupId);
+//        groupBetImport.setImportedByUserEmailAddress(testUserEmailId);
+//
+//        groupBetImportService.update(groupBetImport);
+//        GroupBetImport updatedGroupBetImport = groupBetImportService.findByGroupId(testGroupId);
+//        Assert.assertNotNull("updatedGroupBetImport cannot be null", updatedGroupBetImport);
 
         //step 8: User puts the bet
-        UserPlayedBets userPlayedBets = new UserPlayedBets();
-        userPlayedBets.setUserId(testUserId);
-        userPlayedBets.setGenericBetId(testGenericBetId);
-        userPlayedBets.setGroupId(testGroupId);
-        userPlayedBets.setBetsCartId(testBetsCartId);
+        UserBets userBets = new UserBets();
+        userBets.setUserId(testUserId);
+        userBets.setGenericBetId(testGenericBetId);
+        userBets.setGroupId(testGroupId);
+        userBets.setBetsCartId(testBetsCartId);
 
-        userPlayedBets.setChoice(BetOptions.OPTIONA);
-        userPlayedBetsService.putBet(userPlayedBets);
+        userBets.setChoice(BetOptions.OPTIONA);
+        userBetsService.putBet(userBets);
 
-        userPlayedBets = null;
-        userPlayedBets = userPlayedBetsService.findByGenericBetId(testGenericBetId);
-        Assert.assertNotNull("userMatchBets cannot be null", userPlayedBets);
+        userBets = null;
+        userBets = userBetsService.findByGenericBetId(testGenericBetId);
+        Assert.assertNotNull("userMatchBets cannot be null", userBets);
 
         //step 9: **This is admin task, update the bet
 
@@ -161,11 +161,11 @@ public class UserPlayedBetsResultUpdateSceduledTaskTest extends BaseTest {
 
         //Step 10: the trigger scheduler task should have updated the user results in UserMatchBets
         Thread.sleep(5000); //sleep for 5 secs for the scheduled task to run and complete
-        userPlayedBets = userPlayedBetsService.findByGenericBetId(testGenericBetId);
-        Assert.assertNotNull("userPlayedBets cannot be null", userPlayedBets);
-        System.out.println(userPlayedBets);
-        Assert.assertNotNull("user bet results not updated by task", userPlayedBets.getUserResult());
-        Assert.assertEquals("Incorrect user bet results", userPlayedBets.getUserResult(), UserResult.WON);
+        userBets = userBetsService.findByGenericBetId(testGenericBetId);
+        Assert.assertNotNull("userPlayedBets cannot be null", userBets);
+        System.out.println(userBets);
+        Assert.assertNotNull("user bet results not updated by task", userBets.getUserResult());
+        Assert.assertEquals("Incorrect user bet results", userBets.getUserResult(), UserResult.WON);
     }
 
 }

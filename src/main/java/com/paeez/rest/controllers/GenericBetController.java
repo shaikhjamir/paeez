@@ -58,11 +58,11 @@ public class GenericBetController {
         }
         return new ResponseEntity<List<GenericBetResource>>(genericBetsRes, HttpStatus.OK);
     }
-    @RequestMapping(value="/{betId}/betinfo",
+    @RequestMapping(value="/{genericBetId}",
             method = RequestMethod.GET)
-    public ResponseEntity<GenericBetResource> getBet(@PathVariable String betId)
+    public ResponseEntity<GenericBetResource> getBet(@PathVariable(value="genericBetId") String genericBetId)
     {
-        GenericBet genericBet = genericBetService.findById(betId);
+        GenericBet genericBet = genericBetService.findById(genericBetId);
         GenericBetResource res = new GenericBetResourceAsm().toResource(genericBet);
         return new ResponseEntity<GenericBetResource>(res, HttpStatus.OK);
      }

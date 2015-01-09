@@ -1,9 +1,7 @@
 package com.paeez.test.unit.core.repositories;
 
 import com.paeez.Application;
-import com.paeez.core.services.impl.GroupBetImportServiceImpl;
 import com.paeez.core.repositories.mongo.GlobalBetRepository;
-import com.paeez.core.repositories.mongo.GroupBetImportRepository;
 import com.paeez.core.repositories.mongo.GroupRepository;
 import com.paeez.core.repositories.mongo.UserRepository;
 import org.junit.Assert;
@@ -24,12 +22,6 @@ public class GroupBetImportTest { //} extends BaseModelTest {
 	@Autowired
 	public GlobalBetRepository globalBetRepo;
 
-	@Autowired
-	public GroupBetImportRepository groupBetImportRepo;
-	
-	@Autowired
-	protected GroupBetImportServiceImpl groupBetImportBO ;
-	
 	@Autowired
 	public UserRepository userRepo;
 

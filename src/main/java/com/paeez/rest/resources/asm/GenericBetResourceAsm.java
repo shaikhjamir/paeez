@@ -19,25 +19,7 @@ public class GenericBetResourceAsm extends ResourceAssemblerSupport<GenericBet, 
     }
 
     public GenericBetResource toResource(GenericBet genericBet) {
-        GenericBetResource genericBetResource = new GenericBetResource();
-        genericBetResource.setBetMeasureByOptions(genericBet.getBetMeasureByOptions());
-        genericBetResource.setBetType(genericBet.getBetType());
-        genericBetResource.setCreatedBy(genericBet.getCreatedBy());
-        genericBetResource.setDescription(genericBet.getDescription());
-        genericBetResource.setOptions(genericBet.getOptions());
-        genericBetResource.setStatus(genericBet.getStatus());
-
-        // Convert Date to String
-        SimpleDateFormat sdf = new SimpleDateFormat();
-        if (genericBet.getClosingTime() != null) {
-            String dateString = sdf.format(genericBet.getClosingTime());
-            genericBetResource.setClosingTime(dateString);
-
-            dateString = sdf.format(genericBet.getCreatedTime());
-            genericBetResource.setCreatedTime(dateString);
-        }
-        genericBetResource.add(linkTo(GenericBetController.class).slash(genericBet.getId()).slash("betinfo").withSelfRel());
-
+        GenericBetResource genericBetResource = createResourceWithId(genericBet.getId(), genericBet);
         return genericBetResource;
     }
 

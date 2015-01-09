@@ -1,6 +1,6 @@
 package com.paeez.rest.resources;
 
-import com.paeez.core.model.UserPlayedBets;
+import com.paeez.core.model.UserBets;
 import com.paeez.core.services.constants.BetOptions;
 import com.paeez.core.services.constants.UserResult;
 import org.springframework.hateoas.ResourceSupport;
@@ -8,7 +8,7 @@ import org.springframework.hateoas.ResourceSupport;
 /**
  * Created by Shrikant on 1/3/15.
  */
-public class UserPlayedBetsResource extends ResourceSupport {
+public class UserBetsResource extends ResourceSupport {
 
     private String groupId;
     private String betsCartId;
@@ -65,15 +65,4 @@ public class UserPlayedBetsResource extends ResourceSupport {
         this.userId = userId;
     }
 
-    public UserPlayedBets toUserPlayedBets() {
-        UserPlayedBets userPlayedBets = new UserPlayedBets();
-        userPlayedBets.setGroupId(this.getGroupId());
-        userPlayedBets.setBetsCartId(this.getBetsCartId());
-        userPlayedBets.setGenericBetId(this.getGenericBetId());
-        userPlayedBets.setUserId(this.getUserId());
-
-        //userMatchBets.setChoice(this.getChoice());
-
-        return userPlayedBets;
-    }
 }

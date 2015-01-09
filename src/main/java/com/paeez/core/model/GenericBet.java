@@ -21,19 +21,16 @@ public class GenericBet {
 	
 	private String description ; // can be question like who will score max runs
 
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date createdTime ;   // creation of this Bet this is not at realted to the actual Bet
 	private Date lastModifiedTime ; //
 	private BetStatus status ; // can be active, closed
 	private String createdBy ; // user who created this
 	private Date closingTime ; // This is the time till which Bets are to be accepted, after this elapses Bets should not be accepted
 	   						   // also the closingTime is used while displaying to the user, all Bets will be sorted based on closingTime
-	private long resultTime ; // Ideal time when the results will be declared
-	// TODO change the
+
 	private Map<BetOptions, String> options ; // options displayed such as Virat, Marsh etc. This should never be null rather should have at least 2 options
     private BetOptions winningOption;
 	private BetTypes betType;
-	private Map<String, Long> betMeasureByOptions; // TODO Remove this
 
 	public String getId() {
 		return id;
@@ -79,13 +76,6 @@ public class GenericBet {
 		this.closingTime = closingTime;
 	}
 
-	public long getResultTime() {
-		return resultTime;
-	}
-	public void setResultTime(long resultTime) {
-		this.resultTime = resultTime;
-	}
-
 	public Map<BetOptions, String> getOptions() {
 		return options;
 	}
@@ -118,14 +108,6 @@ public class GenericBet {
 		this.winningOption = winningOption;
 	}
 
-	public Map<String, Long> getBetMeasureByOptions() {
-		return betMeasureByOptions;
-	}
-
-	public void setBetMeasureByOptions(Map<String, Long> betMeasureByOptions) {
-		this.betMeasureByOptions = betMeasureByOptions;
-	}
-
 	@Override
 	public String toString() {
 		return "GenericBet{" +
@@ -133,11 +115,12 @@ public class GenericBet {
 				", description='" + description + '\'' +
 				", createdTime=" + createdTime +
 				", lastModifiedTime=" + lastModifiedTime +
-				", status='" + status + '\'' +
+				", status=" + status +
 				", createdBy='" + createdBy + '\'' +
 				", closingTime=" + closingTime +
-				", resultTime=" + resultTime +
 				", options=" + options +
+				", winningOption=" + winningOption +
+				", betType=" + betType +
 				'}';
 	}
 }

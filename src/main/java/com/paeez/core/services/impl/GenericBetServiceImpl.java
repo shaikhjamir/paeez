@@ -32,7 +32,7 @@ public class GenericBetServiceImpl extends BaseService implements GenericBetServ
     public List<GenericBet> findAll() {
         List<GenericBet> genericBets = genericBetRepository.findAll();
 
-        if (genericBets == null)
+        if (genericBets == null || genericBets.size() == 0)
             throw new GenericBetDoesNotExistException("No generic bets available in store");
 
         return genericBets;

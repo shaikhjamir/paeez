@@ -3,7 +3,7 @@ package com.paeez.test.utilities;
 import com.paeez.core.model.GenericBet;
 import com.paeez.core.model.Group;
 import com.paeez.core.model.User;
-import com.paeez.test.base.Base;
+import com.paeez.test.base.BaseTest;
 import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +28,7 @@ import java.util.List;
 //@RunWith(SpringJUnit4ClassRunner.class)
 //@SpringApplicationConfiguration(classes = Application.class)
 //@WebAppConfiguration
-public class SetupUtil extends Base {
+public class SetupUtil extends BaseTest {
 
     private static final int NO_OF_COLUMNS_USERS = 3;
     private static final int NO_OF_COLUMNS_GROUPS = 3;

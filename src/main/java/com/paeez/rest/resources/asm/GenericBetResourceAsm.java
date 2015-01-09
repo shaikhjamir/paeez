@@ -30,12 +30,13 @@ public class GenericBetResourceAsm extends ResourceAssemblerSupport<GenericBet, 
 
         // Convert Date to String
         SimpleDateFormat sdf = new SimpleDateFormat();
-        String dateString = sdf.format(genericBet.getClosingTime());
-        genericBetResource.setClosingTime(dateString);
+        if (genericBet.getClosingTime() != null) {
+            String dateString = sdf.format(genericBet.getClosingTime());
+            genericBetResource.setClosingTime(dateString);
 
-        dateString = sdf.format(genericBet.getCreatedBy());
-        genericBetResource.setCreatedTime(dateString);
-
+            dateString = sdf.format(genericBet.getCreatedTime());
+            genericBetResource.setCreatedTime(dateString);
+        }
         genericBetResource.add(linkTo(GenericBetController.class).slash(genericBet.getId()).slash("betinfo").withSelfRel());
 
         return genericBetResource;

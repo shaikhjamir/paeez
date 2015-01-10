@@ -6,7 +6,6 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
-import com.paeez.core.model.User;
 import com.paeez.core.model.UserBets;
 import com.paeez.core.services.api.UserBetsService;
 import com.paeez.core.services.constants.UserResult;
@@ -18,27 +17,16 @@ import com.paeez.core.services.util.InputValidations;
 @Service
 public class UserBetsServiceImpl extends BaseService implements UserBetsService {
 
-	
     @Override
     public UserBets putBet(UserBets userBets) {
     	
-    	InputValidations.validateForNull(userBets, "UserPlayedBets cannot be null");
-        InputValidations.validateForNull(userBets.getGroupId(), "UserPlayedBets.groupId cannot be null");
-        InputValidations.validateForNull(userBets.getUserId(), "UserPlayedBets.userId cannot be null");
-        InputValidations.validateForNull(userBets.getGenericBetId(), "UserPlayedBets.genericBetId cannot be null");
-        InputValidations.validateForNull(userBets.getBetMeasureByOptions(), "UserPlayedBets.selected bet cannot be null");
-        InputValidations.validateUserExists(userBets.getUserId());
-        InputValidations.validateGroupExists(userBets.getGroupId());
-        
-        User usr = userRepo.findOne(userBets.getUserId()) ;
-        String groupId  = userBets.getGroupId() ;
-        
-        InputValidations.validateUserBelongsToGroup(usr, groupId);
-        
+    	validateUserGroup(userBets.getUserId(), userBets.getGroupId());
+    	
         userBets.setUserResult(UserResult.AWAITED);
         userBets = userBetsRepository.save(userBets);
         return userBets;
     }
+    
 
     @Override
     public UserBets updateResult(UserBets userBets) {

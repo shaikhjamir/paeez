@@ -13,7 +13,6 @@ import java.util.Map;
 public class UserBetsResource extends ResourceSupport {
 
     private String groupId;
-    private String groupBetsId;
     private String genericBetId;
     private BetOptions choice;
     private UserResult userResult;
@@ -26,14 +25,6 @@ public class UserBetsResource extends ResourceSupport {
 
     public void setGroupId(String groupId) {
         this.groupId = groupId;
-    }
-
-    public String getGroupBetsId() {
-        return groupBetsId;
-    }
-
-    public void setGroupBetsId(String groupBetsId) {
-        this.groupBetsId = groupBetsId;
     }
 
     public String getGenericBetId() {
@@ -78,7 +69,6 @@ public class UserBetsResource extends ResourceSupport {
 
     public UserBetsResource(UserBets userBets) {
         this.groupId = userBets.getGroupId();
-        this.groupBetsId = userBets.getGroupBetsId();
         this.genericBetId = userBets.getGenericBetId();
         this.userResult = userBets.getUserResult();
         this.userId = userBets.getUserId();

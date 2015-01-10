@@ -28,34 +28,6 @@ public class ExceptionHandlerControllerAdvice {
     }
 
     @ResponseBody
-    @ExceptionHandler(GroupAlreadyExistsException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    VndErrors groupAlreadyExistsExceptionHandler(GroupAlreadyExistsException ex) {
-        return new VndErrors("error", ex.getMessage());
-    }
-
-    @ResponseBody
-    @ExceptionHandler(GroupDoesNotExistsException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    VndErrors groupDoesNotExistsExceptionHandler(GroupDoesNotExistsException ex) {
-        return new VndErrors("error", ex.getMessage());
-    }
-
-    @ResponseBody
-    @ExceptionHandler(UserAlreadyExistsException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    VndErrors userAlreadyExistsExceptionHandler(UserAlreadyExistsException ex) {
-        return new VndErrors("error", ex.getMessage());
-    }
-
-    @ResponseBody
-    @ExceptionHandler(UserDoesNotExistsException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    VndErrors userDoesNotExistsExceptionHandler(UserDoesNotExistsException ex) {
-        return new VndErrors("error", ex.getMessage());
-    }
-
-    @ResponseBody
     @ExceptionHandler(NullArgumentException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     VndErrors nullArgumentExceptionHandler(NullArgumentException ex) {

@@ -25,7 +25,7 @@ public class JSONConverter {
 		
 		ObjectMapper mapper = new ObjectMapper();
 		try {
-			System.out.println(mapper.writeValueAsString(bets));
+			System.out.println(mapper.writeValueAsString(betsOPtion));
 		} catch (Exception e) {
 			e.printStackTrace();
 	 

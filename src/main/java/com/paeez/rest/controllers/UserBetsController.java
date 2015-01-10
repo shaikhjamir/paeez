@@ -3,6 +3,7 @@ package com.paeez.rest.controllers;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.paeez.core.model.UserBets;
 import com.paeez.core.services.api.UserBetsService;
+import com.paeez.core.services.constants.BetOptions;
 import com.paeez.rest.resources.UserBetsResource;
 import com.paeez.rest.resources.asm.UserBetsResourceAsm;
 import com.paeez.rest.validators.UserBetsValidator;
@@ -90,6 +92,42 @@ Sample data for the call
     public ResponseEntity<UserBetsResource> putBet(
     		@Valid @RequestBody UserBets userBet) throws Exception {
 
+    	userBet = userBetsService.putBet(userBet);
+        UserBetsResource createdResource = new UserBetsResourceAsm().toResource(userBet);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setLocation(URI.create(createdResource.getLink("self").getHref()));
+        return new ResponseEntity<UserBetsResource>(createdResource, headers, HttpStatus.CREATED);
+    }
+    
+    /**
+     * This is a safer and easier method than the above one
+     * @param userId
+     * @param grpId
+     * @param genericBetId
+     * @param betMeasureByOptions
+     * @return
+     * @throws Exception
+    
+     {
+        "OPTIONA": 99,
+        "OPTIONB": 12,
+        "OPTIONC": 13
+     }
+    
+     */
+    @RequestMapping(value="/{userId}/{grpId}/{genericBetId}/putBet",
+            method = RequestMethod.PUT,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<UserBetsResource> putBetA(@PathVariable("userId") String userId, @PathVariable("grpId") String grpId,
+    		@PathVariable("genericBetId") String genericBetId, @RequestBody Map<BetOptions, Long> betMeasureByOptions) throws Exception {
+
+    	UserBets userBet = new UserBets() ;
+    	userBet.setBetMeasureByOptions(betMeasureByOptions);
+    	userBet.setGenericBetId(genericBetId);
+    	userBet.setGroupId(grpId);
+    	userBet.setUserId(userId);
+    	
     	userBet = userBetsService.putBet(userBet);
         UserBetsResource createdResource = new UserBetsResourceAsm().toResource(userBet);
 

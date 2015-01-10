@@ -20,10 +20,17 @@ public class UserBetsValidator implements Validator {
 	protected GenericBetService genericBetService;
     
     public boolean supports(@SuppressWarnings("rawtypes") Class clazz) {
-        return UserBets.class.equals(clazz);
+    	// It is getting called for other methods of the Controller as well, which it should not, need to find a workaround
+    	// return UserBets.class.equals(clazz);
+    	return true ;
     }
 
+    
     public void validate(Object obj, Errors e) {
+    	
+    	if (obj == null || ( (obj instanceof UserBets) == false) )
+    		return ;
+    	
         ValidationUtils.rejectIfEmptyOrWhitespace(e, "userId", "userId.null");
         ValidationUtils.rejectIfEmptyOrWhitespace(e, "groupId", "groupId.null");
         ValidationUtils.rejectIfEmptyOrWhitespace(e, "genericBetId", "genericBetId.null");
@@ -33,6 +40,6 @@ public class UserBetsValidator implements Validator {
           
         	e.rejectValue("genericBetId", "genericBetId does not exist");
         }
-
+		
      }
 }

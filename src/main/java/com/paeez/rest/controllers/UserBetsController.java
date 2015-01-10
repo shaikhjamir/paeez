@@ -49,8 +49,8 @@ public class UserBetsController {
         return new ResponseEntity<UserBetsResource>(userBetsRes, HttpStatus.OK);
     }
 
-    @RequestMapping(value="/entry",
-            method = RequestMethod.PUT)
+    @RequestMapping(value="/putBet",
+            method = RequestMethod.POST)
     public ResponseEntity<UserBetsResource> createBetEntry(
             @RequestBody UserBets userBet) throws Exception {
 

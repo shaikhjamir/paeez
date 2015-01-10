@@ -143,7 +143,7 @@ public class UserBetsSceduledTaskTest extends BaseTest {
         userBets.setGroupId(testGroupId);
         userBets.setBetsCartId(testBetsCartId);
 
-        userBets.setChoice(BetOptions.OPTIONA);
+        // userBets.setChoice(BetOptions.OPTIONA);
         userBetsService.putBet(userBets);
 
         userBets = null;

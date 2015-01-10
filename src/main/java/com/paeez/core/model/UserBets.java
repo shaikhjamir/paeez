@@ -25,7 +25,6 @@ public class UserBets {
     private String groupId;
     private String betsCartId;
     private String genericBetId;
-    private BetOptions choice;
     private UserResult userResult;
     private String userId;
     private Map<BetOptions, Long> betMeasureByOptions;
@@ -62,14 +61,6 @@ public class UserBets {
         this.genericBetId = genericBetId;
     }
 
-    public BetOptions getChoice() {
-        return choice;
-    }
-
-    public void setChoice(BetOptions choice) {
-        this.choice = choice;
-    }
-
     public UserResult getUserResult() {
         return userResult;
     }
@@ -86,16 +77,18 @@ public class UserBets {
         this.userId = userId;
     }
 
-    @Override
-    public String toString() {
-        return "UserMatchBets{" +
-                "Id='" + Id + '\'' +
-                ", groupId='" + groupId + '\'' +
-                ", betsCartId='" + betsCartId + '\'' +
-                ", genericBetId='" + genericBetId + '\'' +
-                ", choice=" + choice +
-                ", userResult=" + userResult +
-                ", userId='" + userId + '\'' +
-                '}';
-    }
+    public Map<BetOptions, Long> getBetMeasureByOptions() {
+		return betMeasureByOptions;
+	}
+
+	public void setBetMeasureByOptions(Map<BetOptions, Long> betMeasureByOptions) {
+		this.betMeasureByOptions = betMeasureByOptions;
+	}
+
+	@Override
+	public String toString() {
+		return "UserBets [Id=" + Id + ", groupId=" + groupId + ", betsCartId="
+				+ betsCartId + ", genericBetId=" + genericBetId + ", userResult=" + userResult + ", userId=" + userId
+				+ ", betMeasureByOptions=" + betMeasureByOptions + "]";
+	}
 }

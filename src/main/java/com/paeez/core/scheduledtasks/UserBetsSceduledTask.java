@@ -29,6 +29,10 @@ public class UserBetsSceduledTask {
             //UserMatchBets userMatchBets = userMatchBetsServices.findByMatchBetId(matchBet.getId());
             List<UserBets> userBets = userBetsService.findByGenericBetIdAndUserResult(genericBet.getId());
             for (UserBets userPlayedBet : userBets) {
+            	
+            	// TODO fix this since the user can select multiple options its not a single getChoice
+            	// User can bet on multiple choices with different values 
+            	/*
                 if (userBets != null && genericBet.getWinningOption() != null && userPlayedBet.getChoice() != null) {
                     if (genericBet.getWinningOption().equals(userPlayedBet.getChoice()))
                         userPlayedBet.setUserResult(UserResult.WON);
@@ -37,6 +41,7 @@ public class UserBetsSceduledTask {
 
                     userBetsService.updateResult(userPlayedBet);
                 }
+                */
             }
         }
     }

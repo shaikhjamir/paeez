@@ -1,14 +1,16 @@
 package com.paeez.core.services.impl;
 
-import com.paeez.core.model.UserBets;
-import com.paeez.core.services.api.UserBetsService;
-import com.paeez.core.services.constants.UserResult;
-import com.paeez.core.services.util.InputValidations;
+import java.util.List;
+
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.paeez.core.model.User;
+import com.paeez.core.model.UserBets;
+import com.paeez.core.services.api.UserBetsService;
+import com.paeez.core.services.constants.UserResult;
+import com.paeez.core.services.util.InputValidations;
 
 /**
  * Created by Shrikant on 1/3/15.
@@ -16,9 +18,24 @@ import java.util.List;
 @Service
 public class UserBetsServiceImpl extends BaseService implements UserBetsService {
 
+	
     @Override
     public void putBet(UserBets userBets) {
-        InputValidations.validateForNull(userBets, "UserPlayedBets cannot be null");
+    	
+    	InputValidations.validateForNull(userBets, "UserPlayedBets cannot be null");
+        InputValidations.validateForNull(userBets.getGroupId(), "UserPlayedBets.groupId cannot be null");
+        InputValidations.validateForNull(userBets.getUserId(), "UserPlayedBets.userId cannot be null");
+        InputValidations.validateForNull(userBets.getBetsCartId(), "UserPlayedBets.betsCartId cannot be null");
+        InputValidations.validateForNull(userBets.getGenericBetId(), "UserPlayedBets.genericBetId cannot be null");
+        InputValidations.validateForNull(userBets.getBetMeasureByOptions(), "UserPlayedBets.selected bet cannot be null");
+        InputValidations.validateUserExists(userBets.getUserId());
+        InputValidations.validateGroupExists(userBets.getGroupId());
+        
+        User usr = userRepo.findOne(userBets.getUserId()) ;
+        String groupId  = userBets.getGroupId() ;
+        
+        InputValidations.validateUserBelongsToGroup(usr, groupId);
+        
         userBets.setUserResult(UserResult.AWAITED);
         userBetsRepository.save(userBets);
     }

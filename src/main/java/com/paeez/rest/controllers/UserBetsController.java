@@ -33,16 +33,12 @@ import com.paeez.rest.validators.UserBetsValidator;
 @RequestMapping("/userbets")
 public class UserBetsController {
 
+	@Autowired
     private UserBetsService userBetsService;
 
     @Autowired
     private UserBetsValidator userBetsValidator;
     
-    @Autowired
-    public UserBetsController(UserBetsService userBetsService) {
-        this.userBetsService = userBetsService;
-    }
-
     @InitBinder
     protected void initBinder(WebDataBinder binder) {
         binder.setValidator(userBetsValidator);

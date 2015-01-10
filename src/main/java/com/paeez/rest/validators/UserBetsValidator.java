@@ -7,8 +7,7 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import com.paeez.core.model.UserBets;
-import com.paeez.core.repositories.mongo.GenericBetRepository;
-import com.paeez.core.services.api.GroupBetsService;
+import com.paeez.core.services.api.GenericBetService;
 
 /**
  * Created by Shrikant on 1/9/15.
@@ -16,18 +15,11 @@ import com.paeez.core.services.api.GroupBetsService;
 @Component
 public class UserBetsValidator implements Validator {
 
-    @Autowired
-    private GroupBetsService groupBetsService;
     
     @Autowired
-	protected GenericBetRepository genericBetRepository;
+	protected GenericBetService genericBetService;
     
-    @Autowired
-    public UserBetsValidator(GenericBetRepository genericBetRepository) {
-        this.genericBetRepository = genericBetRepository;
-    }
-    
-    public boolean supports(Class clazz) {
+    public boolean supports(@SuppressWarnings("rawtypes") Class clazz) {
         return UserBets.class.equals(clazz);
     }
 
@@ -37,7 +29,7 @@ public class UserBetsValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(e, "genericBetId", "genericBetId.null");
         
         UserBets userBet = (UserBets) obj;
-        if (userBet.getGenericBetId() != null && genericBetRepository.findOne(userBet.getGenericBetId()) == null) {
+        if (userBet.getGenericBetId() != null && genericBetService.findById(userBet.getGenericBetId()) == null) {
           
         	e.rejectValue("genericBetId", "genericBetId does not exist");
         }

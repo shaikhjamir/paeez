@@ -21,10 +21,18 @@ public class UserBetsServiceImpl extends BaseService implements UserBetsService 
     public UserBets putBet(UserBets userBets) {
     	
     	validateUserGroup(userBets.getUserId(), userBets.getGroupId());
-    	
-        userBets.setUserResult(UserResult.AWAITED);
-        userBets = userBetsRepository.save(userBets);
-        return userBets;
+    	UserBets existingBet = userBetsRepository.findByUserIdAndGroupIdAndGenericBetId(userBets.getUserId(), userBets.getGroupId(), userBets.getGenericBetId()) ;
+    	if (existingBet != null ) {
+    		
+    		existingBet.setBetMeasureByOptions(userBets.getBetMeasureByOptions() );
+    		userBets = existingBet ;
+    	} else {
+    		// its a new Bet
+    		userBets.setUserResult(UserResult.AWAITED);
+    	}
+    		
+    	userBets = userBetsRepository.save(userBets);
+    	return userBets;
     }
     
 

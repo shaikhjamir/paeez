@@ -38,7 +38,7 @@ public class UserBetsSceduledTaskTest extends BaseTest {
         groupRepository.deleteAll();
         userRepository.deleteAll();
         groupUsersRepository.deleteAll();
-        betsCartRepository.deleteAll();
+        groupBetsRepository.deleteAll();
         userBetsRepository.deleteAll();
 
         //Step1: Create a group
@@ -98,7 +98,7 @@ public class UserBetsSceduledTaskTest extends BaseTest {
         Date date = sdf.parse(dateInString);
 
         genericBet.setClosingTime(date);
-        genericBetService.enterBet(genericBet);
+        genericBetService.saveBet(genericBet);
 
         List<GenericBet> genericBets = genericBetService.findActive();
         Assert.assertNotNull("genericBets cannot be null", genericBets);
@@ -107,24 +107,24 @@ public class UserBetsSceduledTaskTest extends BaseTest {
         String testGenericBetId = genericBets.get(0).getId();
 
         //step 5 create a cart
-        BetsCart betsCart = new BetsCart();
-        betsCartService.save(betsCart);
+        GroupBets groupBets = new GroupBets();
+        groupBetsService.save(groupBets);
 
-        List<BetsCart> betsCarts = betsCartService.findAll();
-        Assert.assertNotNull("betsCarts cannot be null", betsCarts);
-        Assert.assertEquals("Incorrect number of betsCarts created", 1 ,betsCarts.size());
+        List<GroupBets> groupBetses = groupBetsService.findAll();
+        Assert.assertNotNull("betsCarts cannot be null", groupBetses);
+        Assert.assertEquals("Incorrect number of betsCarts created", 1 , groupBetses.size());
 
-        String testBetsCartId = betsCarts.get(0).getId();
+        String testBetsCartId = groupBetses.get(0).getId();
 
         //step 6 add  bets to cart
         List<String> genericBetIds = new ArrayList<String>();
         genericBetIds.add(genericBets.get(0).getId());
-        betsCarts.get(0).setGenericBetIds(genericBetIds);
-        betsCartService.save(betsCart);
+        groupBetses.get(0).setGenericBetIds(genericBetIds);
+        groupBetsService.save(groupBets);
 
-        betsCarts = betsCartService.findAll();
-        Assert.assertNotNull("betsCarts cannot be null", betsCarts);
-        Assert.assertEquals("Incorrect number of betsCarts created", 1 ,betsCarts.size());
+        groupBetses = groupBetsService.findAll();
+        Assert.assertNotNull("betsCarts cannot be null", groupBetses);
+        Assert.assertEquals("Incorrect number of betsCarts created", 1 , groupBetses.size());
 
         //step 7: Import betscart into group
 //        GroupBetImport groupBetImport= new GroupBetImport();
@@ -141,7 +141,7 @@ public class UserBetsSceduledTaskTest extends BaseTest {
         userBets.setUserId(testUserId);
         userBets.setGenericBetId(testGenericBetId);
         userBets.setGroupId(testGroupId);
-        userBets.setBetsCartId(testBetsCartId);
+        userBets.setGroupBetsId(testBetsCartId);
 
         userBets.setChoice(BetOptions.OPTIONA);
         userBetsService.putBet(userBets);
@@ -156,7 +156,7 @@ public class UserBetsSceduledTaskTest extends BaseTest {
         genericBetService.updateStatus(testGenericBetId, BetStatus.CLOSED);
 
         List<GenericBet> closedGenericBets = genericBetService.findClosed();
-        Assert.assertNotNull("closedGenericBets cannot be null", betsCarts);
+        Assert.assertNotNull("closedGenericBets cannot be null", groupBetses);
         Assert.assertEquals("Incorrect number of closedGenericBets created", 1 ,closedGenericBets.size());
 
         //Step 10: the trigger scheduler task should have updated the user results in UserMatchBets

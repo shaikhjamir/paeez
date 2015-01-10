@@ -10,8 +10,8 @@ import java.util.List;
  */
 @Service
 public interface UserBetsService {
-    public void putBet(UserBets userBets);
-    public void updateResult(UserBets userBets);
+    public UserBets putBet(UserBets userBets);
+    public UserBets updateResult(UserBets userBets);
     UserBets findByGenericBetId(String genericBetId);
     List<UserBets> findAll();
     public List<UserBets> findByGenericBetIdAndUserResult(String genericBetId);

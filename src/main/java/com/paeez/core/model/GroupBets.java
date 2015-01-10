@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by Shrikant on 1/1/15.
  */
-public class BetsCart {
+public class GroupBets {
 
     @Id
     private String id;

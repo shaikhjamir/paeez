@@ -75,9 +75,11 @@ public class GenericBetControllerTest extends BaseTest {
     public void testGenericBetFindAll() throws Exception {
 
         GenericBet genericBet = new GenericBet();
+        genericBet.setId("1234");
         genericBet.setDescription("This is part of mock test");
         genericBet.setCreatedTime(new Date());
         genericBet.setBetType(BetTypes.HIGESTSCORER);
+        genericBet.setCreatedBy("abc@gmail.com");
 
         Calendar c = new GregorianCalendar();
         c.add(Calendar.DATE, 5);
@@ -91,6 +93,7 @@ public class GenericBetControllerTest extends BaseTest {
         options.put(BetOptions.OPTIOND, "Gayle");
         genericBet.setOptions(options);
 
+
         List<GenericBet> genericBetList = new ArrayList<GenericBet>();
         genericBetList.add(genericBet);
 
@@ -98,8 +101,6 @@ public class GenericBetControllerTest extends BaseTest {
 
         Assert.assertNotNull("mockMVC cannot be null", mockMvc);
         Assert.assertNotNull("genericBetControllerMock cannot be null", genericBetControllerMock);
-
-
         Assert.assertNotNull("contentType cannot be null", contentType);
         mockMvc.perform(get("/bets/")
                 .contentType(contentType))

@@ -14,7 +14,7 @@ public class InputValidations {
     @Autowired
     private static UserRepository userRepository;
     @Autowired
-    private static BetsCartRepository betsCartRepository;
+    private static GroupBetsRepository groupBetsRepository;
     @Autowired
     private static GroupUsersRepository groupUsersRepository;
     @Autowired
@@ -46,8 +46,8 @@ public class InputValidations {
     }
 
     public static void validateBetsCartExists(String betsCartId, String errorMessage) {
-        if (betsCartRepository.findOne(betsCartId) == null)
-            throw new BetsCartDoesNotExistsException(errorMessage);
+        if (groupBetsRepository.findOne(betsCartId) == null)
+            throw new GroupBetsDoesNotExistsException(errorMessage);
     }
 
 

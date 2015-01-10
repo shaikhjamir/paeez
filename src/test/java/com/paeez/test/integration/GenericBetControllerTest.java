@@ -20,7 +20,7 @@ public class GenericBetControllerTest extends BaseTest {
    @Before
     public void setup() throws Exception {
         this.mockMvc = webAppContextSetup(webApplicationContext).build();
-        this.genericBetRepository.deleteAll();
+        //this.genericBetRepository.deleteAll();
 
     }
 
@@ -35,7 +35,7 @@ public class GenericBetControllerTest extends BaseTest {
     public void testGenericBetFindAll() throws Exception {
         mockMvc.perform(get("/bets/")
                 .contentType(contentType))
-                .andExpect(jsonPath("$.createdTime").exists())
-                .andExpect(status().isFound());
+                .andExpect(jsonPath("$[*].createdTime").exists())
+                .andExpect(status().isOk());
     }
 }

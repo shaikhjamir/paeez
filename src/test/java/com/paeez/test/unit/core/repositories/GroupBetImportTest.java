@@ -1,7 +1,7 @@
 package com.paeez.test.unit.core.repositories;
 
 import com.paeez.Application;
-import com.paeez.core.repositories.mongo.GlobalBetRepository;
+//import com.paeez.core.repositories.mongo.GlobalBetRepository;
 import com.paeez.core.repositories.mongo.GroupRepository;
 import com.paeez.core.repositories.mongo.UserRepository;
 import org.junit.Assert;
@@ -19,8 +19,8 @@ public class GroupBetImportTest { //} extends BaseModelTest {
 
 	// private static final int NO_OF_COLUMNS = 4;
 
-	@Autowired
-	public GlobalBetRepository globalBetRepo;
+//	@Autowired
+//	public GlobalBetRepository globalBetRepo;
 
 	@Autowired
 	public UserRepository userRepo;
@@ -38,16 +38,16 @@ public class GroupBetImportTest { //} extends BaseModelTest {
 	@Test
 	public void seedGroupBetImportData() {
 
-		try {
-			dropTable();
-			GenericBetTest betTest = new GenericBetTest() ;
-			betTest.globalBetRepo = globalBetRepo ;
-			betTest.seedGlobalBetData();
-		} catch (Exception ex) {
-
-			ex.printStackTrace();
-			Assert.fail("Failed: " + ex.getMessage());
-		}
+//		try {
+//			dropTable();
+//			GenericBetTest betTest = new GenericBetTest() ;
+//			betTest.globalBetRepo = globalBetRepo ;
+//			betTest.seedGlobalBetData();
+//		} catch (Exception ex) {
+//
+//			ex.printStackTrace();
+//			Assert.fail("Failed: " + ex.getMessage());
+//		}
 	}
 	
 	

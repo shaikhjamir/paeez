@@ -28,7 +28,7 @@ public abstract class BaseTest {
     @Autowired
     protected MongoOperations mongoOperations;
     @Autowired
-    protected BetsCartRepository betsCartRepository;
+    protected GroupBetsRepository groupBetsRepository;
     @Autowired
     protected GroupRepository groupRepository;
     @Autowired
@@ -38,7 +38,7 @@ public abstract class BaseTest {
     @Autowired
     protected UserBetsRepository userBetsRepository;
     @Autowired
-    protected BetsCartService betsCartService;
+    protected GroupBetsService groupBetsService;
     @Autowired
     protected UserBetsService userBetsService;
     @Autowired

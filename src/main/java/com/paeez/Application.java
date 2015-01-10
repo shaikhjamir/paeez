@@ -5,11 +5,7 @@ package com.paeez;
  */
 
 
-import com.paeez.core.model.BetsCart;
-import com.paeez.core.repositories.mongo.BetsCartRepository;
-import com.paeez.core.services.constants.BetStatus;
-import com.paeez.core.services.constants.BetTypes;
-import com.paeez.core.services.constants.BetOptions;
+import com.paeez.core.repositories.mongo.GroupBetsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,11 +15,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
 
 @Configuration
 @EnableAutoConfiguration
@@ -32,7 +24,7 @@ import java.util.List;
 public class Application implements CommandLineRunner {
 
     @Autowired
-    private BetsCartRepository betsCartRepository;
+    private GroupBetsRepository groupBetsRepository;
 
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(Application.class, args);

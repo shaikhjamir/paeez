@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class ExceptionHandlerControllerAdvice {
     @ResponseBody
-    @ExceptionHandler(BetsCartDoesNotExistsException.class)
+    @ExceptionHandler(GroupBetsDoesNotExistsException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    VndErrors betsCartDoesNotExistsExceptionHandler(BetsCartDoesNotExistsException ex) {
+    VndErrors betsCartDoesNotExistsExceptionHandler(GroupBetsDoesNotExistsException ex) {
         return new VndErrors("error", ex.getMessage());
     }
 

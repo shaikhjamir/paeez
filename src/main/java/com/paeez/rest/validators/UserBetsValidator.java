@@ -1,8 +1,7 @@
 package com.paeez.rest.validators;
 
-import com.paeez.core.model.GenericBet;
 import com.paeez.core.model.UserBets;
-import com.paeez.core.services.api.BetsCartService;
+import com.paeez.core.services.api.GroupBetsService;
 import com.paeez.core.services.api.GenericBetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,7 +16,7 @@ import org.springframework.validation.Validator;
 public class UserBetsValidator implements Validator {
 
     @Autowired
-    private BetsCartService betsCartService;
+    private GroupBetsService groupBetsService;
     @Autowired
     private GenericBetService genericBetService;
 
@@ -34,7 +33,7 @@ public class UserBetsValidator implements Validator {
 
         UserBets userBet = (UserBets) obj;
 
-        if (userBet.getBetsCartId() != null && betsCartService.findById(userBet.getBetsCartId()) != null)
+        if (userBet.getGroupBetsId() != null && groupBetsService.findById(userBet.getGroupBetsId()) != null)
             e.rejectValue("betsCartId", "betsCartId does not exist");
 
         if (userBet.getGenericBetId() != null && genericBetService.findById(userBet.getGenericBetId()) != null)

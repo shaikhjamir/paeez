@@ -18,9 +18,14 @@ public class GenericBetResourceAsm extends ResourceAssemblerSupport<GenericBet, 
         super(GenericBetController.class, GenericBetResource.class);
     }
 
+    @Override
     public GenericBetResource toResource(GenericBet genericBet) {
         GenericBetResource genericBetResource = createResourceWithId(genericBet.getId(), genericBet);
         return genericBetResource;
     }
 
+    @Override
+    public GenericBetResource instantiateResource(GenericBet genericBet) {
+        return new GenericBetResource(genericBet);
+    }
 }

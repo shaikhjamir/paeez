@@ -18,12 +18,9 @@ abstract public class BaseService {
 
 	@Autowired
 	protected GroupRepository groupRepo;
-	
-	@Autowired
-	protected GlobalBetRepository globalBetRepo ;
 
 	@Autowired
-	protected BetsCartRepository betsCartRepository;
+	protected GroupBetsRepository groupBetsRepository;
 
 	@Autowired
 	protected GenericBetRepository genericBetRepository;

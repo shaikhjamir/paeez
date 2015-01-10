@@ -12,14 +12,14 @@ import java.util.List;
  */
 @Service
 public interface GenericBetService {
-    public void enterBet(GenericBet genericBet);
+    public GenericBet saveBet(GenericBet genericBet);
     public List<GenericBet> findAll();
     public GenericBet findById(String id);
 
     public List<GenericBet> findActive();
     public List<GenericBet> findClosed();
 
-    public void updateStatus(String id, BetStatus betStatus);
-    public void updateResult(String id, BetOptions winningOption);
+    public GenericBet updateStatus(String id, BetStatus betStatus);
+    public GenericBet updateResult(String id, BetOptions winningOption);
 }
 

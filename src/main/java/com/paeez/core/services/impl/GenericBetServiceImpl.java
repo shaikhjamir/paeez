@@ -20,10 +20,11 @@ import java.util.List;
 public class GenericBetServiceImpl extends BaseService implements GenericBetService {
 
     @Override
-    public void enterBet(GenericBet genericBet) {
+    public GenericBet saveBet(GenericBet genericBet) {
         InputValidations.validateForNull(genericBet, "Error in entering generic bet");
         genericBet.setCreatedTime(new Date());
-        genericBetRepository.save(genericBet);
+        genericBet = genericBetRepository.save(genericBet);
+        return genericBet;
     }
 
     @Override
@@ -73,7 +74,7 @@ public class GenericBetServiceImpl extends BaseService implements GenericBetServ
     }
 
     @Override
-    public void updateStatus(String id, BetStatus betStatus) {
+    public GenericBet updateStatus(String id, BetStatus betStatus) {
         InputValidations.validateInputIdForNull("GenericBetId cannot be null/empty", id);
 
         GenericBet genericBet = genericBetRepository.findOne(id);
@@ -83,11 +84,12 @@ public class GenericBetServiceImpl extends BaseService implements GenericBetServ
                     " , failure in updating status");
 
         genericBet.setStatus(betStatus);
-        genericBetRepository.save(genericBet);
+        genericBet = genericBetRepository.save(genericBet);
+        return genericBet;
     }
 
     @Override
-    public void updateResult(String id, BetOptions winningOption) {
+    public GenericBet updateResult(String id, BetOptions winningOption) {
         InputValidations.validateInputIdForNull("GenericBetId cannot be null/empty", id);
 
         GenericBet genericBet = genericBetRepository.findOne(id);
@@ -97,7 +99,8 @@ public class GenericBetServiceImpl extends BaseService implements GenericBetServ
                     " , failure in updating result");
 
         genericBet.setWinningOption(winningOption);
-        genericBetRepository.save(genericBet);
+        genericBet = genericBetRepository.save(genericBet);
+        return genericBet;
     }
 }
 

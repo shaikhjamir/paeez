@@ -71,8 +71,8 @@ public class GenericBetController {
     public ResponseEntity<GenericBetResource> createBetEntry(
             @Valid @RequestBody GenericBet sentBet) throws Exception {
 
-        genericBetService.enterBet(sentBet);
-        GenericBetResource createdResource = new GenericBetResourceAsm().toResource(sentBet);
+        GenericBet createdGenericBet = genericBetService.saveBet(sentBet);
+        GenericBetResource createdResource = new GenericBetResourceAsm().toResource(createdGenericBet);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create(createdResource.getLink("self").getHref()));
@@ -84,10 +84,9 @@ public class GenericBetController {
     public ResponseEntity<GenericBetResource> updateWinner(@PathVariable String betId, @PathVariable String winnerOption) {
 
         BetOptions bw = BetOptions.fromStringId(winnerOption);
-        genericBetService.updateResult(betId, bw);
-        genericBetService.updateStatus(betId, BetStatus.CLOSED);
+        GenericBet updatedGenericBet = genericBetService.updateResult(betId, bw);
+        updatedGenericBet = genericBetService.updateStatus(betId, BetStatus.CLOSED);
 
-        GenericBet updatedGenericBet = genericBetService.findById(betId);
         GenericBetResource updatedResource = new GenericBetResourceAsm().toResource(updatedGenericBet);
 
         HttpHeaders headers = new HttpHeaders();

@@ -16,8 +16,16 @@ import java.util.Map;
  */
 public class GenericBetResource extends ResourceSupport{
 
+//    private GenericBet genericBet;
+//
+//    public GenericBet getGenericBet() {
+//        return genericBet;
+//    }
+//
+//    public void setGenericBet(GenericBet genericBet) {
+//        this.genericBet = genericBet;
+//    }
     private String description ; // can be question like who will score max runs
-
     private Date createdTime ;   // creation of this Bet this is not at realted to the actual Bet
     private Date lastModifiedTime ; //
     private BetStatus status ; // can be active, closed
@@ -99,5 +107,20 @@ public class GenericBetResource extends ResourceSupport{
 
     public void setBetType(BetTypes betType) {
         this.betType = betType;
+    }
+
+    public GenericBetResource(){
+
+    }
+    public GenericBetResource(GenericBet genericBet) {
+        this.description = genericBet.getDescription();
+        this.createdTime = genericBet.getCreatedTime();
+        this.lastModifiedTime = genericBet.getLastModifiedTime();
+        this.status = genericBet.getStatus();
+        this.createdBy = genericBet.getCreatedBy();
+        this.closingTime = genericBet.getClosingTime();
+        this.options = genericBet.getOptions();
+        this.winningOption = genericBet.getWinningOption();
+        this.betType = genericBet.getBetType();
     }
 }

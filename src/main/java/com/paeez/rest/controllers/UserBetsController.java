@@ -54,7 +54,7 @@ public class UserBetsController {
     public ResponseEntity<UserBetsResource> createBetEntry(
             @RequestBody UserBets userBet) throws Exception {
 
-        userBetsService.putBet(userBet);
+        userBet = userBetsService.putBet(userBet);
         UserBetsResource createdResource = new UserBetsResourceAsm().toResource(userBet);
 
         HttpHeaders headers = new HttpHeaders();

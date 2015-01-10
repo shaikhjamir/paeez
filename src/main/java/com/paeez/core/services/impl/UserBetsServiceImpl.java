@@ -17,17 +17,19 @@ import java.util.List;
 public class UserBetsServiceImpl extends BaseService implements UserBetsService {
 
     @Override
-    public void putBet(UserBets userBets) {
+    public UserBets putBet(UserBets userBets) {
         InputValidations.validateForNull(userBets, "UserPlayedBets cannot be null");
         userBets.setUserResult(UserResult.AWAITED);
-        userBetsRepository.save(userBets);
+        userBets = userBetsRepository.save(userBets);
+        return userBets;
     }
 
     @Override
-    public void updateResult(UserBets userBets) {
+    public UserBets updateResult(UserBets userBets) {
 
         InputValidations.validateForNull(userBets, "UserPlayedBets cannot be null");
-        userBetsRepository.save(userBets);
+        userBets = userBetsRepository.save(userBets);
+        return userBets;
     }
 
     //This just returns bets whose results are not updated

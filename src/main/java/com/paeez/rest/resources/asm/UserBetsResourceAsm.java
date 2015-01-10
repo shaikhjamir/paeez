@@ -16,10 +16,14 @@ public class UserBetsResourceAsm extends ResourceAssemblerSupport<UserBets, User
         super(UserBetsController.class, UserBetsResource.class);
     }
 
+    @Override
     public UserBetsResource toResource(UserBets userBets) {
         UserBetsResource resource = createResourceWithId(userBets.getId(), userBets);
-        resource.add(linkTo(UserBetsController.class).slash(userBets.getId()).slash("userbetsinfo").withSelfRel());
         return resource;
+    }
 
+    @Override
+    public UserBetsResource instantiateResource(UserBets userBets) {
+        return new UserBetsResource(userBets);
     }
 }

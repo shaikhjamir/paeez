@@ -1,8 +1,6 @@
 package com.paeez.rest.validators;
 
-import com.paeez.core.model.BetsCart;
-import com.paeez.core.model.GenericBet;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.paeez.core.model.GroupBets;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
@@ -12,12 +10,12 @@ import org.springframework.validation.Validator;
  * Created by Shrikant on 1/9/15.
  */
 @Component
-public class BetsCartValidator implements Validator {
+public class GroupBetsValidator implements Validator {
 
     //@Autowired
     //private GroupSer
     public boolean supports(Class clazz) {
-        return BetsCart.class.equals(clazz);
+        return GroupBets.class.equals(clazz);
     }
 
     public void validate(Object obj, Errors e) {
@@ -26,9 +24,9 @@ public class BetsCartValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(e, "importedByUserEmailAddress", "importedByUserEmailAddress.null");
         ValidationUtils.rejectIfEmptyOrWhitespace(e, "betType", "betType.null");
 
-        BetsCart betsCart = (BetsCart) obj;
+        GroupBets groupBets = (GroupBets) obj;
 
-        if (betsCart.getGenericBetIds() != null && betsCart.getGenericBetIds().size() < 1)
+        if (groupBets.getGenericBetIds() != null && groupBets.getGenericBetIds().size() < 1)
             e.rejectValue("genericBetIds", "Bet genericBetIds should at least be 1");
 
         //TODO: check if groupId exists

@@ -85,34 +85,11 @@ public class UserBets {
         this.userId = userId;
     }
 
-<<<<<<< HEAD
-    @Override
-    public String toString() {
-        return "UserBets{" +
-                "Id='" + Id + '\'' +
-                ", groupId='" + groupId + '\'' +
-                ", groupBetsId='" + groupBetsId + '\'' +
-                ", genericBetId='" + genericBetId + '\'' +
-                ", choice=" + choice +
-                ", userResult=" + userResult +
-                ", userId='" + userId + '\'' +
-                ", betMeasureByOptions=" + betMeasureByOptions +
-                '}';
-    }
-=======
-    public Map<BetOptions, Long> getBetMeasureByOptions() {
-		return betMeasureByOptions;
-	}
-
-	public void setBetMeasureByOptions(Map<BetOptions, Long> betMeasureByOptions) {
-		this.betMeasureByOptions = betMeasureByOptions;
-	}
-
 	@Override
 	public String toString() {
-		return "UserBets [Id=" + Id + ", groupId=" + groupId + ", betsCartId="
-				+ betsCartId + ", genericBetId=" + genericBetId + ", userResult=" + userResult + ", userId=" + userId
+		return "UserBets [Id=" + Id + ", groupId=" + groupId + ", groupBetsId="
+				+ groupBetsId + ", genericBetId=" + genericBetId
+				+ ", userResult=" + userResult + ", userId=" + userId
 				+ ", betMeasureByOptions=" + betMeasureByOptions + "]";
 	}
->>>>>>> cbbecdd087d3ecefc2c275286557b935cc60e9e6
 }

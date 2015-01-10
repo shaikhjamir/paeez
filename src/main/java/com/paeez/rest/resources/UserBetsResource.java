@@ -80,7 +80,6 @@ public class UserBetsResource extends ResourceSupport {
         this.groupId = userBets.getGroupId();
         this.groupBetsId = userBets.getGroupBetsId();
         this.genericBetId = userBets.getGenericBetId();
-        this.choice = userBets.getChoice();
         this.userResult = userBets.getUserResult();
         this.userId = userBets.getUserId();
         this.betMeasureByOptions = userBets.getBetMeasureByOptions();

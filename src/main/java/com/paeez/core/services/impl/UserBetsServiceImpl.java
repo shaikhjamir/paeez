@@ -20,16 +20,11 @@ public class UserBetsServiceImpl extends BaseService implements UserBetsService 
 
 	
     @Override
-<<<<<<< HEAD
     public UserBets putBet(UserBets userBets) {
-        InputValidations.validateForNull(userBets, "UserPlayedBets cannot be null");
-=======
-    public void putBet(UserBets userBets) {
     	
     	InputValidations.validateForNull(userBets, "UserPlayedBets cannot be null");
         InputValidations.validateForNull(userBets.getGroupId(), "UserPlayedBets.groupId cannot be null");
         InputValidations.validateForNull(userBets.getUserId(), "UserPlayedBets.userId cannot be null");
-        InputValidations.validateForNull(userBets.getBetsCartId(), "UserPlayedBets.betsCartId cannot be null");
         InputValidations.validateForNull(userBets.getGenericBetId(), "UserPlayedBets.genericBetId cannot be null");
         InputValidations.validateForNull(userBets.getBetMeasureByOptions(), "UserPlayedBets.selected bet cannot be null");
         InputValidations.validateUserExists(userBets.getUserId());
@@ -40,7 +35,6 @@ public class UserBetsServiceImpl extends BaseService implements UserBetsService 
         
         InputValidations.validateUserBelongsToGroup(usr, groupId);
         
->>>>>>> cbbecdd087d3ecefc2c275286557b935cc60e9e6
         userBets.setUserResult(UserResult.AWAITED);
         userBets = userBetsRepository.save(userBets);
         return userBets;
